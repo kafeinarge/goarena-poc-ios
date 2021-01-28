@@ -105,6 +105,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		E4979C3125C34DF5002B4E9C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4F8F88825C2F85A0062D14C /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E4C6270925C1E0D0007EB745 = {
 			isa = PBXGroup;
 			children = (
@@ -133,7 +141,7 @@
 				E4C6272325C1E0D0007EB745 /* Info.plist */,
 				E477871025C1F16900800F53 /* Network */,
 				E4979C2B25C34D0E002B4E9C /* Scenes */,
-				E4F8F88825C2F85A0062D14C /* Extensions.swift */,
+				E4979C3125C34DF5002B4E9C /* Utils */,
 			);
 			path = "goarena-poc";
 			sourceTree = "<group>";

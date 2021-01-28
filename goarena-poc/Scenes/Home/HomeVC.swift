@@ -121,6 +121,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let post = response?[indexPath.row] {
+            if post.preview == nil || post.text == nil {
+                return tableView.frame.height / 2
+            }
+            //presenter?.showPostDetail(post)
+        }
         return UITableView.automaticDimension
     }
 }
