@@ -198,16 +198,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mediaFrameView" destination="7IP-Ho-C8K" id="Yvh-nN-lkT"/>
+                        <outlet property="feedImageView" destination="a6O-VZ-gQN" id="2ZO-JO-0DY"/>
+                        <outlet property="mediaFrameView" destination="7IP-Ho-C8K" id="YZE-cA-up7"/>
                         <outlet property="mediaFrameViewHeightConstraint" destination="kTn-Ov-n4E" id="Hqf-vk-PMy"/>
-                        <outlet property="scrollView" destination="LXa-6D-LCG" id="TsK-0N-6ql"/>
-                        <outlet property="tagViewHeight" destination="Y9y-k6-z1x" id="wcO-Mn-IgL"/>
-                        <outlet property="textContentTextView" destination="xAm-Ze-5AS" id="o38-NT-Tm4"/>
+                        <outlet property="scrollView" destination="LXa-6D-LCG" id="sZR-gx-hlu"/>
+                        <outlet property="textContentTextView" destination="xAm-Ze-5AS" id="cEG-YV-5XQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chp-PT-9MB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="125"/>
+            <point key="canvasLocation" x="752" y="125"/>
         </scene>
     </scenes>
     <resources>

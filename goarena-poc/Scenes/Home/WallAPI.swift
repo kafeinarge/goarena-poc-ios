@@ -15,7 +15,6 @@ class WallAPI {
         var headerParams = HTTPHeaders()
         headerParams.add(name: "Authorization", value: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjEyNzExNjk1fQ.lWxP3tRGMEgHh74aWRv6dQW_3HjnoiO4BcMavJuUFG4iFQZIzoxJKEkE7i8lJdXb_gyLOrr8LwTH9JHmG6je1w")
      //   headerParams.add(name: "Accept", value: "*/*")
-        
         BaseAPI.shared.request(methotType: .get,
                                params: nil,
                                baseURL: URLs.baseURL.rawValue,

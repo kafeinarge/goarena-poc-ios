@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: BaseVC<HomeViewModel> {
     @IBOutlet weak var wallTableView: UITableView!
     private var refresher: UIRefreshControl!
     private var currentPage: Int = 0
@@ -16,12 +16,11 @@ class HomeVC: UIViewController {
     var isDownloadedBefore = false
     var lockScreen = false
     var response: [Content]?
-    var wallApi = WallAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getContents()
+        onSubscribe()
+        viewModel.getContents()
         wallTableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
         wallTableView.backgroundColor = UIColor.init(hexString: "#F3F6FA")
         wallTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 85, right: 0)
@@ -34,46 +33,18 @@ class HomeVC: UIViewController {
         wallTableView.addSubview(refresher)
         loadPosts(currentPage)
     }
-    
-    
-    func getContents() {
-        getUserDefaults()
-        if response != nil {
-            isDownloadedBefore = true
-        } else {
-            lockScreen = true
-        }
-        
-        wallApi.getWallService(lockScreen: lockScreen,
-            succeed: handleResponse,
-            failed: handleErrorResponse)
-     
-    }
 
-    func handleResponse(response: WallResponse) {
-        self.response = response.content
-        self.wallTableView.reloadData()
-    }
-
-    func handleErrorResponse(response: ErrorMessage) {
-        print(response.error)
-        print(response.message)
-    }
-
-    func saveImagesToUserDefaults() {
-        if let encoded = try? JSONEncoder().encode(response) {
-            UserDefaults.standard.set(encoded, forKey: "wallContents")
+    private func onSubscribe() {
+        SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_STATE.rawValue) { result in
+            if let event = result!.object as? WallResponse {
+                if event.content.count > 0 {
+                    self.response = event.content
+                    self.wallTableView.reloadData()
+                }
+            }
         }
     }
 
-    func getUserDefaults() {
-        if let jsonData = UserDefaults.standard.value(forKey: "wallContents") as? Data,
-            let obj = try? JSONDecoder().decode([Content].self, from: jsonData) {
-            response = obj
-        }
-    }
-
-    
     private func reloadCollectionView() {
         if isNewPageLoading {
             wallTableView.reloadSections(IndexSet.init(integer: 0), with: .none)
@@ -114,10 +85,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let post = response?[indexPath.row] {
-            print(post.user)
-            //presenter?.showPostDetail(post)
-        }
+        if let _ = response?[indexPath.row] { }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

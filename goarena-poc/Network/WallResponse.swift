@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct FeedDetail: Codable {
+    let preview: String?
+    let text: String?
+    let user: User?
+}
+
 // MARK: - WallResponse
 struct WallResponse: Codable, Equatable {
     let content: [Content]

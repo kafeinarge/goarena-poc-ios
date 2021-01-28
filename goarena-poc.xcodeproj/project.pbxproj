@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		12E0C62AD548F363DFC38BA3 /* Pods_goarena_poc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB238400AA55CB0A638369 /* Pods_goarena_poc.framework */; };
+		E4979C3425C35419002B4E9C /* HomeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C3325C35419002B4E9C /* HomeDetailVC.swift */; };
+		E4979C3A25C35532002B4E9C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C3725C35532002B4E9C /* BaseViewController.swift */; };
+		E4979C3B25C35532002B4E9C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C3825C35532002B4E9C /* BaseNavigationController.swift */; };
+		E4979C3C25C35532002B4E9C /* BaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C3925C35532002B4E9C /* BaseBuilder.swift */; };
+		E4979C4525C35854002B4E9C /* SwiftEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C4425C35854002B4E9C /* SwiftEventBus.swift */; };
+		E4979C5125C35F4C002B4E9C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C5025C35F4C002B4E9C /* HomeViewModel.swift */; };
+		E4979C5D25C35F78002B4E9C /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C5B25C35F78002B4E9C /* BaseVC.swift */; };
+		E4979C5E25C35F78002B4E9C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C5C25C35F78002B4E9C /* BaseViewModel.swift */; };
 		E4C6271625C1E0D0007EB745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6271525C1E0D0007EB745 /* AppDelegate.swift */; };
 		E4C6271D25C1E0D0007EB745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C6271B25C1E0D0007EB745 /* Main.storyboard */; };
 		E4C6271F25C1E0D0007EB745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C6271E25C1E0D0007EB745 /* Assets.xcassets */; };
@@ -25,6 +33,14 @@
 		1A9358625A4034997C4C97F0 /* Pods-goarena-poc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goarena-poc.debug.xcconfig"; path = "Target Support Files/Pods-goarena-poc/Pods-goarena-poc.debug.xcconfig"; sourceTree = "<group>"; };
 		498A150049AD19D0014F2552 /* Pods-goarena-poc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goarena-poc.release.xcconfig"; path = "Target Support Files/Pods-goarena-poc/Pods-goarena-poc.release.xcconfig"; sourceTree = "<group>"; };
 		88AB238400AA55CB0A638369 /* Pods_goarena_poc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_goarena_poc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4979C3325C35419002B4E9C /* HomeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailVC.swift; sourceTree = "<group>"; };
+		E4979C3725C35532002B4E9C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E4979C3825C35532002B4E9C /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		E4979C3925C35532002B4E9C /* BaseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBuilder.swift; sourceTree = "<group>"; };
+		E4979C4425C35854002B4E9C /* SwiftEventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftEventBus.swift; sourceTree = "<group>"; };
+		E4979C5025C35F4C002B4E9C /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E4979C5B25C35F78002B4E9C /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		E4979C5C25C35F78002B4E9C /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		E4C6271225C1E0D0007EB745 /* goarena-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "goarena-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C6271525C1E0D0007EB745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4C6271C25C1E0D0007EB745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +97,7 @@
 		E4979C2B25C34D0E002B4E9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E4979C3625C35532002B4E9C /* Base */,
 				E4979C2D25C34D1A002B4E9C /* Home */,
 			);
 			path = Scenes;
@@ -91,6 +108,8 @@
 			children = (
 				E4979C2F25C34D38002B4E9C /* CustomViews */,
 				E4C6273C25C1E6D6007EB745 /* HomeVC.swift */,
+				E4979C5025C35F4C002B4E9C /* HomeViewModel.swift */,
+				E4979C3325C35419002B4E9C /* HomeDetailVC.swift */,
 				E4C6274325C1E7E6007EB745 /* WallAPI.swift */,
 			);
 			path = Home;
@@ -108,9 +127,30 @@
 		E4979C3125C34DF5002B4E9C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E4979C4425C35854002B4E9C /* SwiftEventBus.swift */,
 				E4F8F88825C2F85A0062D14C /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4979C3625C35532002B4E9C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E4979C5A25C35F78002B4E9C /* BaseVC */,
+				E4979C3725C35532002B4E9C /* BaseViewController.swift */,
+				E4979C3825C35532002B4E9C /* BaseNavigationController.swift */,
+				E4979C3925C35532002B4E9C /* BaseBuilder.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E4979C5A25C35F78002B4E9C /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				E4979C5B25C35F78002B4E9C /* BaseVC.swift */,
+				E4979C5C25C35F78002B4E9C /* BaseViewModel.swift */,
+			);
+			path = BaseVC;
 			sourceTree = "<group>";
 		};
 		E4C6270925C1E0D0007EB745 = {
@@ -262,11 +302,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C6274425C1E7E6007EB745 /* WallAPI.swift in Sources */,
+				E4979C5E25C35F78002B4E9C /* BaseViewModel.swift in Sources */,
 				E4C6274725C1E81D007EB745 /* BaseAPI+API Model.swift in Sources */,
+				E4979C3425C35419002B4E9C /* HomeDetailVC.swift in Sources */,
 				E4F8F88525C2E5B80062D14C /* FeedCell.swift in Sources */,
+				E4979C4525C35854002B4E9C /* SwiftEventBus.swift in Sources */,
 				E4C6273225C1E492007EB745 /* WallResponse.swift in Sources */,
+				E4979C3C25C35532002B4E9C /* BaseBuilder.swift in Sources */,
+				E4979C3A25C35532002B4E9C /* BaseViewController.swift in Sources */,
 				E4F8F88925C2F85A0062D14C /* Extensions.swift in Sources */,
 				E4C6273D25C1E6D6007EB745 /* HomeVC.swift in Sources */,
+				E4979C5D25C35F78002B4E9C /* BaseVC.swift in Sources */,
+				E4979C3B25C35532002B4E9C /* BaseNavigationController.swift in Sources */,
+				E4979C5125C35F4C002B4E9C /* HomeViewModel.swift in Sources */,
 				E4C6271625C1E0D0007EB745 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
