@@ -64,6 +64,7 @@ struct User: Codable, Equatable {
     let surname: String?
     let username: String?
     let admin: Bool?
+    let title: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -71,6 +72,7 @@ struct User: Codable, Equatable {
         case surname = "surname"
         case username = "username"
         case admin = "admin"
+        case title = "title"
     }
 }
 

@@ -17,6 +17,12 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var approvalStatusFrameView: UIView!
     @IBOutlet weak var approvalStatusImageView: UIImageView!
+    @IBOutlet weak var approvalStatusViewHeightConstraint: NSLayoutConstraint! {
+        didSet {
+            approvalStatusViewHeightConstraint.constant = 0
+        }
+    }
+    
     @IBOutlet weak var approvalStatusLabel: UILabel!
     @IBOutlet weak var textContentTextView: UITextView!
     @IBOutlet weak var feedImageView: UIImageView!
@@ -44,23 +50,20 @@ class FeedCell: UITableViewCell {
     }
 
     func setup(_ post: Content, tableWidth: CGFloat) {
-        var username: String? = ""
-        let cardWidth = tableWidth
+        let cardWidth =  post.preview != nil ? tableWidth - 40 : tableWidth
         self.post = post
-        cardBackgroundView.backgroundColor = .white
+        cardBackgroundView.backgroundColor = UIColor.init(hexString: "#FECB00")
         
         if let user = post.user {
-            username = "\(String(describing: user.username)) \(String(describing: user.surname))"
+            if let name = user.name,
+               let sName = user.surname,
+               let title = user.title {
+                self.usernameLabel.text = name + " " + sName
+                self.userSubtitleLabel.text = title
+            }
         }
         
-        if let approvalDate = post.creationDate {
-            let elapsedTime = approvalDate.getElapsedTime()
-            self.usernameLabel.attributedText = NSAttributedString.nameAndElapsedTimeAttributedText(withString: "\(username)   \(elapsedTime)", timeString: elapsedTime)
-        } else {
-            self.usernameLabel.text = username
-        }
-
-        self.userSubtitleLabel.text = "Turkcell Resmi Hesabı"
+       
         if var content = post.text {
             self.textContentTextView.isHidden = false
             if content.count > 255 {

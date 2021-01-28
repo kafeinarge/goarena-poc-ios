@@ -12,17 +12,13 @@
 		E4C6271D25C1E0D0007EB745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C6271B25C1E0D0007EB745 /* Main.storyboard */; };
 		E4C6271F25C1E0D0007EB745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C6271E25C1E0D0007EB745 /* Assets.xcassets */; };
 		E4C6272225C1E0D0007EB745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C6272025C1E0D0007EB745 /* LaunchScreen.storyboard */; };
-		E4C6272E25C1E3C0007EB745 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6272D25C1E3C0007EB745 /* BaseVC.swift */; };
 		E4C6273225C1E492007EB745 /* WallResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6273125C1E492007EB745 /* WallResponse.swift */; };
-		E4C6273925C1E681007EB745 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6273825C1E681007EB745 /* BaseVM.swift */; };
 		E4C6273D25C1E6D6007EB745 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6273C25C1E6D6007EB745 /* HomeVC.swift */; };
-		E4C6274025C1E70C007EB745 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6273F25C1E70C007EB745 /* HomeViewModel.swift */; };
 		E4C6274425C1E7E6007EB745 /* WallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6274325C1E7E6007EB745 /* WallAPI.swift */; };
 		E4C6274725C1E81D007EB745 /* BaseAPI+API Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6274625C1E81D007EB745 /* BaseAPI+API Model.swift */; };
 		E4F8F88525C2E5B80062D14C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F8F88325C2E5B80062D14C /* FeedCell.swift */; };
 		E4F8F88625C2E5B80062D14C /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F8F88425C2E5B80062D14C /* FeedCell.xib */; };
 		E4F8F88925C2F85A0062D14C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F8F88825C2F85A0062D14C /* Extensions.swift */; };
-		E4F8F88D25C2FE670062D14C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F8F88C25C2FE670062D14C /* SessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,17 +31,13 @@
 		E4C6271E25C1E0D0007EB745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4C6272125C1E0D0007EB745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4C6272325C1E0D0007EB745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4C6272D25C1E3C0007EB745 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		E4C6273125C1E492007EB745 /* WallResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallResponse.swift; sourceTree = "<group>"; };
-		E4C6273825C1E681007EB745 /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
 		E4C6273C25C1E6D6007EB745 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		E4C6273F25C1E70C007EB745 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E4C6274325C1E7E6007EB745 /* WallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallAPI.swift; sourceTree = "<group>"; };
 		E4C6274625C1E81D007EB745 /* BaseAPI+API Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseAPI+API Model.swift"; sourceTree = "<group>"; };
 		E4F8F88325C2E5B80062D14C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		E4F8F88425C2E5B80062D14C /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		E4F8F88825C2F85A0062D14C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E4F8F88C25C2FE670062D14C /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,22 +69,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E477870E25C1F14C00800F53 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				E4C6272D25C1E3C0007EB745 /* BaseVC.swift */,
-				E4C6273825C1E681007EB745 /* BaseVM.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		E477871025C1F16900800F53 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E4C6273125C1E492007EB745 /* WallResponse.swift */,
 				E4C6274625C1E81D007EB745 /* BaseAPI+API Model.swift */,
-				E4F8F88C25C2FE670062D14C /* SessionManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		E4979C2B25C34D0E002B4E9C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E4979C2D25C34D1A002B4E9C /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E4979C2D25C34D1A002B4E9C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E4979C2F25C34D38002B4E9C /* CustomViews */,
+				E4C6273C25C1E6D6007EB745 /* HomeVC.swift */,
+				E4C6274325C1E7E6007EB745 /* WallAPI.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E4979C2F25C34D38002B4E9C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				E4F8F88325C2E5B80062D14C /* FeedCell.swift */,
+				E4F8F88425C2E5B80062D14C /* FeedCell.xib */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		E4C6270925C1E0D0007EB745 = {
@@ -121,14 +131,8 @@
 				E4C6271E25C1E0D0007EB745 /* Assets.xcassets */,
 				E4C6272025C1E0D0007EB745 /* LaunchScreen.storyboard */,
 				E4C6272325C1E0D0007EB745 /* Info.plist */,
-				E477870E25C1F14C00800F53 /* Base */,
 				E477871025C1F16900800F53 /* Network */,
-				E4C6273125C1E492007EB745 /* WallResponse.swift */,
-				E4C6273C25C1E6D6007EB745 /* HomeVC.swift */,
-				E4C6273F25C1E70C007EB745 /* HomeViewModel.swift */,
-				E4C6274325C1E7E6007EB745 /* WallAPI.swift */,
-				E4F8F88325C2E5B80062D14C /* FeedCell.swift */,
-				E4F8F88425C2E5B80062D14C /* FeedCell.xib */,
+				E4979C2B25C34D0E002B4E9C /* Scenes */,
 				E4F8F88825C2F85A0062D14C /* Extensions.swift */,
 			);
 			path = "goarena-poc";
@@ -249,17 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C6273925C1E681007EB745 /* BaseVM.swift in Sources */,
-				E4C6272E25C1E3C0007EB745 /* BaseVC.swift in Sources */,
 				E4C6274425C1E7E6007EB745 /* WallAPI.swift in Sources */,
 				E4C6274725C1E81D007EB745 /* BaseAPI+API Model.swift in Sources */,
 				E4F8F88525C2E5B80062D14C /* FeedCell.swift in Sources */,
-				E4C6274025C1E70C007EB745 /* HomeViewModel.swift in Sources */,
 				E4C6273225C1E492007EB745 /* WallResponse.swift in Sources */,
 				E4F8F88925C2F85A0062D14C /* Extensions.swift in Sources */,
 				E4C6273D25C1E6D6007EB745 /* HomeVC.swift in Sources */,
 				E4C6271625C1E0D0007EB745 /* AppDelegate.swift in Sources */,
-				E4F8F88D25C2FE670062D14C /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

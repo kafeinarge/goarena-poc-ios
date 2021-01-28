@@ -21,9 +21,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        wallApi.getWallService(lockScreen: lockScreen,
-            succeed: handleResponse,
-            failed: handleErrorResponse)
+        getContents()
         wallTableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
         wallTableView.backgroundColor = UIColor.init(hexString: "#F3F6FA")
         wallTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 85, right: 0)
@@ -35,7 +33,6 @@ class HomeVC: UIViewController {
         refresher.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         wallTableView.addSubview(refresher)
         loadPosts(currentPage)
-        
     }
     
     
