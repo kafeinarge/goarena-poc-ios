@@ -37,7 +37,7 @@ extension String {
             elapsedTime = Date.elapsedTime(Date._DateFormatter.date(from: self)!)
             return elapsedTime
         } else {
-            elapsedTime = Date.elapsedTime(Date._DateFormatterRemoveNano.date(from: self)!)
+            elapsedTime = Date.elapsedTime(Date._DateFormatterRemoveNano.date(from: self) ?? Date())
             return elapsedTime
         }
     }

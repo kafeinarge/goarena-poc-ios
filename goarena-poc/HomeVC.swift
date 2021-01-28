@@ -55,6 +55,7 @@ class HomeVC: UIViewController {
 
     func handleResponse(response: WallResponse) {
         self.response = response.content
+        self.wallTableView.reloadData()
     }
 
     func handleErrorResponse(response: ErrorMessage) {
