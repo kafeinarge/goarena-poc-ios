@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12E0C62AD548F363DFC38BA3 /* Pods_goarena_poc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB238400AA55CB0A638369 /* Pods_goarena_poc.framework */; };
+		E4C6271625C1E0D0007EB745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6271525C1E0D0007EB745 /* AppDelegate.swift */; };
+		E4C6271D25C1E0D0007EB745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C6271B25C1E0D0007EB745 /* Main.storyboard */; };
+		E4C6271F25C1E0D0007EB745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C6271E25C1E0D0007EB745 /* Assets.xcassets */; };
+		E4C6272225C1E0D0007EB745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C6272025C1E0D0007EB745 /* LaunchScreen.storyboard */; };
+		E4C6272E25C1E3C0007EB745 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6272D25C1E3C0007EB745 /* BaseVC.swift */; };
+		E4C6273225C1E492007EB745 /* WallResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6273125C1E492007EB745 /* WallResponse.swift */; };
+		E4C6273925C1E681007EB745 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6273825C1E681007EB745 /* BaseVM.swift */; };
+		E4C6273D25C1E6D6007EB745 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6273C25C1E6D6007EB745 /* HomeVC.swift */; };
+		E4C6274025C1E70C007EB745 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6273F25C1E70C007EB745 /* HomeViewModel.swift */; };
+		E4C6274425C1E7E6007EB745 /* WallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6274325C1E7E6007EB745 /* WallAPI.swift */; };
+		E4C6274725C1E81D007EB745 /* BaseAPI+API Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6274625C1E81D007EB745 /* BaseAPI+API Model.swift */; };
+		E4F8F88525C2E5B80062D14C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F8F88325C2E5B80062D14C /* FeedCell.swift */; };
+		E4F8F88625C2E5B80062D14C /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F8F88425C2E5B80062D14C /* FeedCell.xib */; };
+		E4F8F88925C2F85A0062D14C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F8F88825C2F85A0062D14C /* Extensions.swift */; };
+		E4F8F88D25C2FE670062D14C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F8F88C25C2FE670062D14C /* SessionManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A9358625A4034997C4C97F0 /* Pods-goarena-poc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goarena-poc.debug.xcconfig"; path = "Target Support Files/Pods-goarena-poc/Pods-goarena-poc.debug.xcconfig"; sourceTree = "<group>"; };
+		498A150049AD19D0014F2552 /* Pods-goarena-poc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goarena-poc.release.xcconfig"; path = "Target Support Files/Pods-goarena-poc/Pods-goarena-poc.release.xcconfig"; sourceTree = "<group>"; };
+		88AB238400AA55CB0A638369 /* Pods_goarena_poc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_goarena_poc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C6271225C1E0D0007EB745 /* goarena-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "goarena-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C6271525C1E0D0007EB745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4C6271C25C1E0D0007EB745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4C6271E25C1E0D0007EB745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4C6272125C1E0D0007EB745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4C6272325C1E0D0007EB745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C6272D25C1E3C0007EB745 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		E4C6273125C1E492007EB745 /* WallResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallResponse.swift; sourceTree = "<group>"; };
+		E4C6273825C1E681007EB745 /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
+		E4C6273C25C1E6D6007EB745 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E4C6273F25C1E70C007EB745 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E4C6274325C1E7E6007EB745 /* WallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallAPI.swift; sourceTree = "<group>"; };
+		E4C6274625C1E81D007EB745 /* BaseAPI+API Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseAPI+API Model.swift"; sourceTree = "<group>"; };
+		E4F8F88325C2E5B80062D14C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		E4F8F88425C2E5B80062D14C /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		E4F8F88825C2F85A0062D14C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E4F8F88C25C2FE670062D14C /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4C6270F25C1E0D0007EB745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12E0C62AD548F363DFC38BA3 /* Pods_goarena_poc.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50342D95882C3456BE09F82A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A9358625A4034997C4C97F0 /* Pods-goarena-poc.debug.xcconfig */,
+				498A150049AD19D0014F2552 /* Pods-goarena-poc.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		887DBC5AD06F745482902C08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88AB238400AA55CB0A638369 /* Pods_goarena_poc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E477870E25C1F14C00800F53 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6272D25C1E3C0007EB745 /* BaseVC.swift */,
+				E4C6273825C1E681007EB745 /* BaseVM.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E477871025C1F16900800F53 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6274625C1E81D007EB745 /* BaseAPI+API Model.swift */,
+				E4F8F88C25C2FE670062D14C /* SessionManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E4C6270925C1E0D0007EB745 = {
+			isa = PBXGroup;
+			children = (
+				E4C6271425C1E0D0007EB745 /* goarena-poc */,
+				E4C6271325C1E0D0007EB745 /* Products */,
+				50342D95882C3456BE09F82A /* Pods */,
+				887DBC5AD06F745482902C08 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E4C6271325C1E0D0007EB745 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6271225C1E0D0007EB745 /* goarena-poc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4C6271425C1E0D0007EB745 /* goarena-poc */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6271525C1E0D0007EB745 /* AppDelegate.swift */,
+				E4C6271B25C1E0D0007EB745 /* Main.storyboard */,
+				E4C6271E25C1E0D0007EB745 /* Assets.xcassets */,
+				E4C6272025C1E0D0007EB745 /* LaunchScreen.storyboard */,
+				E4C6272325C1E0D0007EB745 /* Info.plist */,
+				E477870E25C1F14C00800F53 /* Base */,
+				E477871025C1F16900800F53 /* Network */,
+				E4C6273125C1E492007EB745 /* WallResponse.swift */,
+				E4C6273C25C1E6D6007EB745 /* HomeVC.swift */,
+				E4C6273F25C1E70C007EB745 /* HomeViewModel.swift */,
+				E4C6274325C1E7E6007EB745 /* WallAPI.swift */,
+				E4F8F88325C2E5B80062D14C /* FeedCell.swift */,
+				E4F8F88425C2E5B80062D14C /* FeedCell.xib */,
+				E4F8F88825C2F85A0062D14C /* Extensions.swift */,
+			);
+			path = "goarena-poc";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4C6271125C1E0D0007EB745 /* goarena-poc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C6272625C1E0D0007EB745 /* Build configuration list for PBXNativeTarget "goarena-poc" */;
+			buildPhases = (
+				BE62D24D24040059144FB0A8 /* [CP] Check Pods Manifest.lock */,
+				E4C6270E25C1E0D0007EB745 /* Sources */,
+				E4C6270F25C1E0D0007EB745 /* Frameworks */,
+				E4C6271025C1E0D0007EB745 /* Resources */,
+				0F8903BC65E75EDAC9F09012 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "goarena-poc";
+			productName = "goarena-poc";
+			productReference = E4C6271225C1E0D0007EB745 /* goarena-poc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4C6270A25C1E0D0007EB745 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					E4C6271125C1E0D0007EB745 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = E4C6270D25C1E0D0007EB745 /* Build configuration list for PBXProject "goarena-poc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4C6270925C1E0D0007EB745;
+			productRefGroup = E4C6271325C1E0D0007EB745 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4C6271125C1E0D0007EB745 /* goarena-poc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4C6271025C1E0D0007EB745 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C6272225C1E0D0007EB745 /* LaunchScreen.storyboard in Resources */,
+				E4C6271F25C1E0D0007EB745 /* Assets.xcassets in Resources */,
+				E4C6271D25C1E0D0007EB745 /* Main.storyboard in Resources */,
+				E4F8F88625C2E5B80062D14C /* FeedCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F8903BC65E75EDAC9F09012 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-goarena-poc/Pods-goarena-poc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-goarena-poc/Pods-goarena-poc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-goarena-poc/Pods-goarena-poc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE62D24D24040059144FB0A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-goarena-poc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4C6270E25C1E0D0007EB745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C6273925C1E681007EB745 /* BaseVM.swift in Sources */,
+				E4C6272E25C1E3C0007EB745 /* BaseVC.swift in Sources */,
+				E4C6274425C1E7E6007EB745 /* WallAPI.swift in Sources */,
+				E4C6274725C1E81D007EB745 /* BaseAPI+API Model.swift in Sources */,
+				E4F8F88525C2E5B80062D14C /* FeedCell.swift in Sources */,
+				E4C6274025C1E70C007EB745 /* HomeViewModel.swift in Sources */,
+				E4C6273225C1E492007EB745 /* WallResponse.swift in Sources */,
+				E4F8F88925C2F85A0062D14C /* Extensions.swift in Sources */,
+				E4C6273D25C1E6D6007EB745 /* HomeVC.swift in Sources */,
+				E4C6271625C1E0D0007EB745 /* AppDelegate.swift in Sources */,
+				E4F8F88D25C2FE670062D14C /* SessionManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E4C6271B25C1E0D0007EB745 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4C6271C25C1E0D0007EB745 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4C6272025C1E0D0007EB745 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4C6272125C1E0D0007EB745 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4C6272425C1E0D0007EB745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E4C6272525C1E0D0007EB745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4C6272725C1E0D0007EB745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A9358625A4034997C4C97F0 /* Pods-goarena-poc.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZQ62XS8WXR;
+				INFOPLIST_FILE = "goarena-poc/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.codefirst.goarenapoc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E4C6272825C1E0D0007EB745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 498A150049AD19D0014F2552 /* Pods-goarena-poc.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZQ62XS8WXR;
+				INFOPLIST_FILE = "goarena-poc/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.codefirst.goarenapoc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4C6270D25C1E0D0007EB745 /* Build configuration list for PBXProject "goarena-poc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C6272425C1E0D0007EB745 /* Debug */,
+				E4C6272525C1E0D0007EB745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4C6272625C1E0D0007EB745 /* Build configuration list for PBXNativeTarget "goarena-poc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C6272725C1E0D0007EB745 /* Debug */,
+				E4C6272825C1E0D0007EB745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4C6270A25C1E0D0007EB745 /* Project object */;
+}
