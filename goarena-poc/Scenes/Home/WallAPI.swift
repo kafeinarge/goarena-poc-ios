@@ -49,6 +49,9 @@ class WallAPI {
                 SwiftEventBus.post(SubscribeViewState.FEED_REFRESH.rawValue)
                 succeed()
                 return
+            } else if dataResponse.response?.statusCode == 500 {
+                HUD.show(.label("Silme işleminde bir hata oluştu."))
+                HUD.hide(afterDelay: 1)
             }
         })
 

@@ -24,21 +24,25 @@ class NewFeedAPI {
         guard let url = URL(string: urlStr) else { return }
         AF.sessionConfiguration.timeoutIntervalForRequest = 60
         uploadRequest = AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(data, withName: "file", fileName: "image.jpg")
-            if let text = text.data(using: .utf8) {
+            HUD.show(.progress)
+            multipartFormData.append(data, withName: "file", fileName: "resim1.jpg")
+            if let text = text.data(using: .utf8, allowLossyConversion: false) {
                 multipartFormData.append(text, withName: "text")
             }
             headerParams.add(name: "Content-Type", value: multipartFormData.contentType)
         }, to: url, method: .put, headers: headerParams)
         .responseString(completionHandler: { dataResponse in
-            switch dataResponse.result {
-            case .success(_):
+            HUD.hide()
+            switch dataResponse.response?.statusCode {
+            case 200:
                 HUD.show(.label("Başarıyla gönderildi!"))
                 HUD.hide(afterDelay: 1)
                 SwiftEventBus.post(SubscribeViewState.NEW_FEED_SUCCESS.rawValue, sender: true)
-            case .failure(_):
-                HUD.show(.label("Bir hata oluştu. \n \(dataResponse.result)"))
+            case 500, 404:
+                HUD.show(.label("Bilinmeyen bir hata oluştu."))
                 HUD.hide(afterDelay: 1)
+            case .none: break
+            case .some(_): break
             }
         })
 

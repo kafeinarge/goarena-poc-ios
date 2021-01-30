@@ -16,7 +16,7 @@ class HomeVC: BaseVC<HomeViewModel> {
     var isDownloadedBefore = false
     var lockScreen = false
     var response: [Content]?
-    var userID = 1
+    var userID = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         onSubscribe()
@@ -47,7 +47,7 @@ class HomeVC: BaseVC<HomeViewModel> {
         
         SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_REFRESH.rawValue) { result in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                self.wallTableView.reloadData()
+                self.viewModel.getContents()
             })
         }
         
