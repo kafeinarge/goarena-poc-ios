@@ -37,20 +37,18 @@ class WallAPI {
         headerParams.add(name: "Accept", value: "*/*")
         
         guard let id = postId else { return }
-        let urlStr = Endpoint.delete.generateURL(URLs.baseURL.rawValue) + String(id)
+        let urlStr = Endpoint.delete.generateURL(URLs.baseURL.rawValue) + "\(id)"
         guard let url = URL(string: urlStr) else { return }
-
         AF.sessionConfiguration.timeoutIntervalForRequest = 60
-        AF.request(url, method: .delete, headers: headerParams)
-        .responseString(completionHandler: { dataResponse in
-            switch dataResponse.result {
-            case .success(_):
+        let request =  AF.request(url, method: .delete, headers: headerParams)
+       
+        request.responseString(completionHandler: { dataResponse in
+            if dataResponse.response?.statusCode == 200 {
                 HUD.show(.label("Post silindi!"))
                 HUD.hide(afterDelay: 1)
                 SwiftEventBus.post(SubscribeViewState.FEED_REFRESH.rawValue)
-            case .failure(_):
-                HUD.show(.label("Bir hata oluştu. \n \(dataResponse.result)"))
-                HUD.hide(afterDelay: 1)
+                succeed()
+                return
             }
         })
 
