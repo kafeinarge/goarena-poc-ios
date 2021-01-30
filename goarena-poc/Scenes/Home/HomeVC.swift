@@ -17,7 +17,7 @@ class HomeVC: BaseVC<HomeViewModel> {
     var lockScreen = false
     var response: [Content]?
     var userID = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         onSubscribe()
@@ -27,6 +27,11 @@ class HomeVC: BaseVC<HomeViewModel> {
         wallTableView.backgroundColor = UIColor.init(hexString: "#F3F6FA")
         wallTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 85, right: 0)
         wallTableView.separatorStyle = .none
+        // MARK: Pull to refresh
+        refresher = UIRefreshControl()
+        refresher.tintColor = UIColor.blue
+        refresher.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        wallTableView.addSubview(refresher)
     }
 
     private func onSubscribe() {
@@ -39,13 +44,13 @@ class HomeVC: BaseVC<HomeViewModel> {
                 }
             }
         }
-        
+
         SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_REFRESH.rawValue) { result in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                self.viewModel.getContents()
-            })
+                    self.viewModel.getContents()
+                })
         }
-        
+
     }
 
 
@@ -81,23 +86,27 @@ class HomeVC: BaseVC<HomeViewModel> {
         if hasNextPage {
             let lastItem = response?.count ?? 0 - 1
             if pageLimit != lastItem {
-                    if currentPage < pageLimit ?? 10 {
-                        currentPage += 1
-                        hasNextPage = pageLimit != currentPage
-                        viewModel.pageNumber = currentPage
-                        viewModel.getContents()
-                    }
+                if currentPage < pageLimit ?? 10 {
+                    currentPage += 1
+                    hasNextPage = pageLimit != currentPage
+                    viewModel.pageNumber = currentPage
+                    viewModel.getContents()
                 }
+            }
             wallTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
             wallTableView.reloadData()
+            refresher.endRefreshing()
         } else {
             wallTableView.reloadData()
+            refresher.endRefreshing()
         }
+      
     }
-    
+
     @objc
     func pullToRefresh() {
-
+        refresher.beginRefreshing()
+        reloadView()
     }
 }
 
@@ -150,7 +159,6 @@ extension HomeVC: UIScrollViewDelegate {
         let contentHeight = scrollView.contentSize.height
 
         if (offsetY > contentHeight - scrollView.frame.size.height && hasNextPage) {
-            
             reloadView()
         }
     }
