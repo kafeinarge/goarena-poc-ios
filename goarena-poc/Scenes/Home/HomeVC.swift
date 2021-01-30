@@ -16,6 +16,7 @@ class HomeVC: BaseVC<HomeViewModel> {
     var pageLimit: Int? = 0
     var lockScreen = false
     var response: [Content]?
+    
     var userID = 0
 
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class HomeVC: BaseVC<HomeViewModel> {
         SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_STATE.rawValue) { result in
             if let event = result!.object as? WallResponse {
                 if event.content.count > 0 {
-                    self.response = event.content
+                    self.response = event.content.filter({ $0.text != nil && $0.preview != nil })
                     self.pageLimit = event.totalPages
                     self.wallTableView.reloadData()
                 }
@@ -93,14 +94,13 @@ class HomeVC: BaseVC<HomeViewModel> {
                     viewModel.getContents()
                 }
             }
-            wallTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
             wallTableView.reloadData()
             refresher.endRefreshing()
         } else {
             wallTableView.reloadData()
             refresher.endRefreshing()
         }
-      
+
     }
 
     @objc
@@ -122,10 +122,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
-        guard (response?.count)! > indexPath.row else { return cell }
-        if let post = response?[indexPath.row] {
-            cell.setup(post, tableWidth: wallTableView.frame.width)
+        guard let post = response?[indexPath.row] else { return UITableViewCell() }
+        if post.text != nil && post.preview != nil {
+            return UITableViewCell()
         }
+        print("POST _>", post.text, post.preview)
+        cell.setup(post, tableWidth: wallTableView.frame.width)
         return cell
     }
 
