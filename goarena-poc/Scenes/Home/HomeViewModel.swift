@@ -9,7 +9,8 @@ import UIKit
 
 enum SubscribeViewState: String {
     case FEED_STATE
-    case FEED_DETAIL_STATE
+    case NEW_FEED_SUCCESS
+    case NEW_FEED_FAILURE
 }
 
 class HomeViewModel: BaseViewModel {
@@ -19,11 +20,9 @@ class HomeViewModel: BaseViewModel {
     var wallApi = WallAPI()
 
     func getContents() {
-   
         getUserDefaults()
         if response != nil {
             isDownloadedBefore = true
-
         } else {
             lockScreen = true
         }

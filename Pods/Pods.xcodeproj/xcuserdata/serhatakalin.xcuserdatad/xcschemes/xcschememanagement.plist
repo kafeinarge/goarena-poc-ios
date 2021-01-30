@@ -25,26 +25,40 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>PKHUD-PKHUDResources.xcscheme</key>
+		<key>Mantis-Resource.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>PKHUD.xcscheme</key>
+		<key>Mantis.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>Pods-goarena-poc.xcscheme</key>
+		<key>PKHUD-PKHUDResources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>PKHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
+		</dict>
+		<key>Pods-goarena-poc.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>libwebp.xcscheme</key>
 		<dict>

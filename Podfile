@@ -9,5 +9,6 @@ target 'goarena-poc' do
   pod "KingfisherWebP"
   pod 'Alamofire'
   pod 'PKHUD'
+  pod 'Mantis', '~> 1.4.8'
 
 end

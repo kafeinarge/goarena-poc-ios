@@ -10,12 +10,11 @@ import UIKit
 import Combine
 
 protocol ViewModelData {}
-
 class BaseVC<VM>: UIViewController where VM: BaseViewModel {
     lazy var viewModel: VM = VM()
     var data: ViewModelData?
     private var stateObserver: NSObjectProtocol?
-
+ 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.observeViewStateChanges()
@@ -55,23 +54,23 @@ class BaseVC<VM>: UIViewController where VM: BaseViewModel {
         alertController.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
-    
+
 }
 
 extension BaseVC {
     func selectImage() {
-        let alertController = UIAlertController(title: "", message: "Please select an image", preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Photo Library", style: .default) { [weak self] _ in
+        let alertController = UIAlertController(title: "", message: "Lütfen resim seçin", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Album", style: .default) { [weak self] _ in
             self?.showPicker(source: .photoLibrary)
         })
-        alertController.addAction(UIAlertAction(title: "Camera", style: .default) { [weak self] _ in
+        alertController.addAction(UIAlertAction(title: "Kamera", style: .default) { [weak self] _ in
             #if targetEnvironment(simulator)
             self?.showCameraNotSupported()
             #else
             self?.showPicker(source: .camera)
             #endif
         })
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        alertController.addAction(UIAlertAction(title: "Vazgeç", style: .cancel) { _ in
             alertController.dismiss(animated: true)
         })
         present(alertController, animated: true)

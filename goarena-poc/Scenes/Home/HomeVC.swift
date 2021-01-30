@@ -20,6 +20,7 @@ class HomeVC: BaseVC<HomeViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         onSubscribe()
+        
         viewModel.getContents()
         wallTableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
         wallTableView.backgroundColor = UIColor.init(hexString: "#F3F6FA")
@@ -44,8 +45,21 @@ class HomeVC: BaseVC<HomeViewModel> {
             }
         }
     }
+    
+    
+    @IBAction func openCharts(_ sender: Any) {
+        print("charts..")
+        
+    }
+    
+    @IBAction func openNewFeed(_ sender: Any) {
+        guard let vc = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "NewFeedVC") as? NewFeedVC else { return }
+        guard let nc = self.navigationController else { return }
+        nc.pushViewController(vc, animated: true)
+    }
 
-    private func reloadCollectionView() {
+    private func reloadView() {
         if isNewPageLoading {
             wallTableView.reloadSections(IndexSet.init(integer: 0), with: .none)
         } else {
@@ -85,7 +99,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let _ = response?[indexPath.row] { }
+        if let post = response?[indexPath.row] {
+            guard let vc = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "HomeDetailVC") as? HomeDetailVC else { return }
+            vc.text = post.text
+            vc.image = post.preview
+            guard let nc = self.navigationController else { return }
+            nc.pushViewController(vc, animated: true)
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
