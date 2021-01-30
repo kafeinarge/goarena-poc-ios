@@ -45,12 +45,12 @@ class HomeVC: BaseVC<HomeViewModel> {
             }
         }
         
-        SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_DELETED.rawValue) { result in
+        SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_REFRESH.rawValue) { result in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                print("yenileniyor..")
                 self.wallTableView.reloadData()
             })
         }
+        
     }
 
 

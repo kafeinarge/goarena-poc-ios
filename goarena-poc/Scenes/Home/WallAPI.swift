@@ -47,7 +47,7 @@ class WallAPI {
             case .success(_):
                 HUD.show(.label("Post silindi!"))
                 HUD.hide(afterDelay: 1)
-                SwiftEventBus.post(SubscribeViewState.FEED_DELETED.rawValue)
+                SwiftEventBus.post(SubscribeViewState.FEED_REFRESH.rawValue)
             case .failure(_):
                 HUD.show(.label("Bir hata oluştu. \n \(dataResponse.result)"))
                 HUD.hide(afterDelay: 1)

@@ -13,6 +13,7 @@ enum SubscribeViewState: String {
     case NEW_FEED_FAILURE
     case FEED_DELETED
     case FEED_UPDATED
+    case FEED_REFRESH
 }
 
 class HomeViewModel: BaseViewModel {

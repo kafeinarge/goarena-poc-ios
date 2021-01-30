@@ -93,6 +93,7 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
                 if event == true {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                         self.pop(self)
+                        SwiftEventBus.post(SubscribeViewState.FEED_REFRESH.rawValue)
                     })
                 }
             }
