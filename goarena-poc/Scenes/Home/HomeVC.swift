@@ -39,6 +39,10 @@ class HomeVC: BaseVC<HomeViewModel> {
         SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_STATE.rawValue) { result in
             if let event = result!.object as? WallResponse {
                 if event.content.count > 0 {
+                    if self.topRefresh {
+                        self.response.removeAll()
+                        self.topRefresh.toggle()
+                    }
                     let data = event.content.filter({ $0.text != nil || $0.preview != nil })
                     for d in data {
                         self.response.append(d)
