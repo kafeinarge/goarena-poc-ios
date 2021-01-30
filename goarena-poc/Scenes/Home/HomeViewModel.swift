@@ -21,6 +21,7 @@ class HomeViewModel: BaseViewModel {
     var lockScreen = false
     var response: [Content]?
     var wallApi = WallAPI()
+    var pageNumber = 0
 
     func getContents() {
         getUserDefaults()
@@ -31,6 +32,7 @@ class HomeViewModel: BaseViewModel {
         }
 
         wallApi.getWallService(lockScreen: lockScreen,
+            pageNumber: pageNumber,
             succeed: handleResponse,
             failed: handleErrorResponse)
 

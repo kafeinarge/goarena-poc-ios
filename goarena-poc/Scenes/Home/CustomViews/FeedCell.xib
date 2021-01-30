@@ -119,12 +119,11 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv6-sT-NCq">
-                                                <rect key="frame" x="0.0" y="80" width="641" height="274"/>
+                                                <rect key="frame" x="0.0" y="80" width="641" height="334"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNi-Rr-uXL">
-                                                        <rect key="frame" x="16" y="0.0" width="609" height="274"/>
+                                                        <rect key="frame" x="16" y="0.0" width="609" height="334"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <string key="text">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff... devam</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -139,17 +138,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXZ-dx-FBb" userLabel="MediaFrame">
-                                                <rect key="frame" x="0.0" y="354" width="641" height="310"/>
+                                                <rect key="frame" x="0.0" y="414" width="641" height="250"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6mV-ZU-XoN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="641" height="310"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="641" height="250"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="6mV-ZU-XoN" firstAttribute="top" secondItem="pXZ-dx-FBb" secondAttribute="top" id="AJR-bg-Joa"/>
                                                     <constraint firstAttribute="bottom" secondItem="6mV-ZU-XoN" secondAttribute="bottom" id="Qq2-c8-vcL"/>
-                                                    <constraint firstAttribute="height" constant="310" id="Zlo-lw-BBT"/>
+                                                    <constraint firstAttribute="height" constant="250" id="Zlo-lw-BBT"/>
                                                     <constraint firstItem="6mV-ZU-XoN" firstAttribute="leading" secondItem="pXZ-dx-FBb" secondAttribute="leading" id="bOG-hW-39j"/>
                                                     <constraint firstAttribute="trailing" secondItem="6mV-ZU-XoN" secondAttribute="trailing" id="nWM-do-WKe"/>
                                                 </constraints>

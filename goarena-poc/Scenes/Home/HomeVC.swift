@@ -11,12 +11,13 @@ class HomeVC: BaseVC<HomeViewModel> {
     @IBOutlet weak var wallTableView: UITableView!
     private var refresher: UIRefreshControl!
     private var currentPage: Int = 0
-    private var hasNextPage = false
-    private var isNewPageLoading: Bool = false
+    private var hasNextPage = true
     var isDownloadedBefore = false
+    var pageLimit: Int? = 0
     var lockScreen = false
     var response: [Content]?
     var userID = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         onSubscribe()
@@ -26,13 +27,6 @@ class HomeVC: BaseVC<HomeViewModel> {
         wallTableView.backgroundColor = UIColor.init(hexString: "#F3F6FA")
         wallTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 85, right: 0)
         wallTableView.separatorStyle = .none
-
-        // MARK: Pull to refresh
-        refresher = UIRefreshControl()
-        refresher.tintColor = UIColor.systemBlue
-        refresher.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
-        wallTableView.addSubview(refresher)
-        loadPosts(currentPage)
     }
 
     private func onSubscribe() {
@@ -40,6 +34,7 @@ class HomeVC: BaseVC<HomeViewModel> {
             if let event = result!.object as? WallResponse {
                 if event.content.count > 0 {
                     self.response = event.content
+                    self.pageLimit = event.totalPages
                     self.wallTableView.reloadData()
                 }
             }
@@ -83,18 +78,23 @@ class HomeVC: BaseVC<HomeViewModel> {
     }
 
     private func reloadView() {
-        if isNewPageLoading {
-            wallTableView.reloadSections(IndexSet.init(integer: 0), with: .none)
+        if hasNextPage {
+            let lastItem = response?.count ?? 0 - 1
+            if pageLimit != lastItem {
+                    if currentPage < pageLimit ?? 10 {
+                        currentPage += 1
+                        hasNextPage = pageLimit != currentPage
+                        viewModel.pageNumber = currentPage
+                        viewModel.getContents()
+                    }
+                }
+            wallTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            wallTableView.reloadData()
         } else {
             wallTableView.reloadData()
         }
-        isNewPageLoading = false
     }
-
-    func loadPosts(_ page: Int = 0) {
-        isNewPageLoading = page > 0
-    }
-
+    
     @objc
     func pullToRefresh() {
 
@@ -139,11 +139,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let post = response?[indexPath.row] {
-            if post.preview == nil || post.text == nil {
-                return tableView.frame.height / 2
-            }
-        }
         return UITableView.automaticDimension
     }
 }
@@ -155,8 +150,8 @@ extension HomeVC: UIScrollViewDelegate {
         let contentHeight = scrollView.contentSize.height
 
         if (offsetY > contentHeight - scrollView.frame.size.height && hasNextPage) {
-            currentPage += 1
-            //loadPosts(currentPage)
+            
+            reloadView()
         }
     }
 }
