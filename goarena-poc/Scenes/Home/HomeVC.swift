@@ -15,8 +15,8 @@ class HomeVC: BaseVC<HomeViewModel> {
     var isDownloadedBefore = false
     var pageLimit: Int? = 0
     var lockScreen = false
-    var response: [Content]?
-    
+    var response = [Content]()
+    var topRefresh = false
     var userID = 0
 
     override func viewDidLoad() {
@@ -39,7 +39,10 @@ class HomeVC: BaseVC<HomeViewModel> {
         SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_STATE.rawValue) { result in
             if let event = result!.object as? WallResponse {
                 if event.content.count > 0 {
-                    self.response = event.content.filter({ $0.text != nil && $0.preview != nil })
+                    let data = event.content.filter({ $0.text != nil || $0.preview != nil })
+                    for d in data {
+                        self.response.append(d)
+                    }
                     self.pageLimit = event.totalPages
                     self.wallTableView.reloadData()
                 }
@@ -85,11 +88,14 @@ class HomeVC: BaseVC<HomeViewModel> {
 
     private func reloadView() {
         if hasNextPage {
-            let lastItem = response?.count ?? 0 - 1
+            let lastItem = response.count - 1
             if pageLimit != lastItem {
                 if currentPage < pageLimit ?? 10 {
                     currentPage += 1
                     hasNextPage = pageLimit != currentPage
+                    if topRefresh {
+                        currentPage = 0
+                    }
                     viewModel.pageNumber = currentPage
                     viewModel.getContents()
                 }
@@ -106,6 +112,7 @@ class HomeVC: BaseVC<HomeViewModel> {
     @objc
     func pullToRefresh() {
         refresher.beginRefreshing()
+        topRefresh = true
         reloadView()
     }
 }
@@ -117,12 +124,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return response?.count ?? 0
+        return response.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
-        guard let post = response?[indexPath.row] else { return UITableViewCell() }
+        let post = response[indexPath.row]
         if post.text != nil && post.preview != nil {
             return UITableViewCell()
         }
@@ -132,7 +139,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let post = response?[indexPath.row] else { return }
+        let post = response[indexPath.row]
         if post.userId == userID {
             let alert = UIAlertController(title: "Seçenekler", message: "Düzenlemeler", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Güncelle", style: .default, handler: { (UIAlertAction)in
