@@ -14,7 +14,6 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userSubtitleLabel: UILabel!
-    @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var approvalStatusFrameView: UIView!
     @IBOutlet weak var approvalStatusImageView: UIImageView!
     @IBOutlet weak var approvalStatusViewHeightConstraint: NSLayoutConstraint! {
@@ -50,35 +49,28 @@ class FeedCell: UITableViewCell {
     }
 
     func setup(_ post: Content, tableWidth: CGFloat) {
-        let cardWidth =  post.preview != nil ? tableWidth - 40 : tableWidth
         self.post = post
+        let cardWidth =  post.preview != nil ? tableWidth - 40 : tableWidth
         cardBackgroundView.backgroundColor = UIColor.init(hexString: "#FECB00")
         
-        if let user = post.user {
-            if let name = user.name,
-               let sName = user.surname,
-               let title = user.title {
-                self.usernameLabel.text = name + " " + sName
-                self.userSubtitleLabel.text = title
-            }
-        }
-        
+        self.usernameLabel.text = (post.user?.name)! + " " + (post.user?.surname)!
+        self.userSubtitleLabel.text = post.user?.title
        
         if var content = post.text {
-            self.textContentTextView.isHidden = false
             if content.count > 255 {
                 content = "\(String(content.prefix(255)))... devamı"
                 self.textContentTextView.attributedText = NSAttributedString.linkAttributedText(withString: content, linkString: "devamı")
             } else {
                 self.textContentTextView.attributedText = nil
-                self.textContentTextView.text = content
+                self.textContentTextView.text = "\(content)"
             }
-        } else {
-            self.textContentTextView.isHidden = true
         }
-
+        
         guard let image = post.preview else { return }
-        feedImageView.image = convertBase64StringToImage(imageBase64String: image)
+        
+        DispatchQueue.main.async { [self] in
+            feedImageView.image = convertBase64StringToImage(imageBase64String: image)
+        }
         
         if feedImageView == nil {
             mediaFrameViewHeightConstraint.constant = 0

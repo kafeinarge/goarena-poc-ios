@@ -79,7 +79,7 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
             return
         }
         let image = imageView.image ?? UIImage()
-        let data = image.jpegData(compressionQuality: 0.8) ?? Data()
+        let data = image.jpegData(compressionQuality: 0.5) ?? Data()
         viewModel.postFeed(data, text: postTextView.text)
     }
 

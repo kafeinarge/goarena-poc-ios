@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -57,7 +57,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Turkcell Resmi Hesabi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVR-uA-fHm">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Turkcell Resmi Hesabı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVR-uA-fHm">
                                                         <rect key="frame" x="60" y="27" width="523" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="HBL-oe-Dqh"/>
@@ -118,19 +118,19 @@
                                                     <constraint firstAttribute="trailing" secondItem="x9e-8a-AYy" secondAttribute="trailing" id="aGk-6m-CWw"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv6-sT-NCq" userLabel="PostTextFrame">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv6-sT-NCq">
                                                 <rect key="frame" x="0.0" y="80" width="641" height="274"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNi-Rr-uXL">
                                                         <rect key="frame" x="16" y="0.0" width="609" height="274"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff... devam</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="jNi-Rr-uXL" secondAttribute="trailing" constant="16" id="9B5-66-JRi"/>
                                                     <constraint firstItem="jNi-Rr-uXL" firstAttribute="leading" secondItem="sv6-sT-NCq" secondAttribute="leading" constant="16" id="UKu-QB-bFp"/>
@@ -141,8 +141,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXZ-dx-FBb" userLabel="MediaFrame">
                                                 <rect key="frame" x="0.0" y="354" width="641" height="310"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6mV-ZU-XoN">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6mV-ZU-XoN">
                                                         <rect key="frame" x="0.0" y="0.0" width="641" height="310"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -166,7 +167,7 @@
                                                         <state key="selected" image="cw-like-selected"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 beğeni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-lY-7Y3">
-                                                        <rect key="frame" x="58" y="14.5" width="485" height="21"/>
+                                                        <rect key="frame" x="58" y="14.666666666666629" width="485" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -205,9 +206,8 @@
                                             <constraint firstAttribute="bottom" secondItem="olr-Im-qim" secondAttribute="bottom" id="3fb-BX-tza"/>
                                             <constraint firstAttribute="trailing" secondItem="sv6-sT-NCq" secondAttribute="trailing" id="4Cj-tV-Svy"/>
                                             <constraint firstItem="GVo-v9-Fpn" firstAttribute="leading" secondItem="lla-jo-wzg" secondAttribute="leading" id="FzC-JI-06J"/>
-                                            <constraint firstItem="pXZ-dx-FBb" firstAttribute="top" secondItem="sv6-sT-NCq" secondAttribute="bottom" id="K4j-PI-Xz9"/>
                                             <constraint firstAttribute="trailing" secondItem="pXZ-dx-FBb" secondAttribute="trailing" id="K8E-uO-wfY"/>
-                                            <constraint firstItem="pXZ-dx-FBb" firstAttribute="width" secondItem="XlM-82-j4h" secondAttribute="width" id="KsZ-yT-zCg"/>
+                                            <constraint firstItem="pXZ-dx-FBb" firstAttribute="top" secondItem="sv6-sT-NCq" secondAttribute="bottom" id="Rwt-NP-iAH"/>
                                             <constraint firstItem="sv6-sT-NCq" firstAttribute="leading" secondItem="XlM-82-j4h" secondAttribute="leading" id="YFC-e5-g20"/>
                                             <constraint firstItem="olr-Im-qim" firstAttribute="leading" secondItem="XlM-82-j4h" secondAttribute="leading" id="d6X-zs-n3v"/>
                                             <constraint firstItem="sv6-sT-NCq" firstAttribute="top" secondItem="GVo-v9-Fpn" secondAttribute="bottom" id="iGF-wi-rPE"/>
@@ -258,7 +258,7 @@
                 <outlet property="mediaFrameViewHeightConstraint" destination="Zlo-lw-BBT" id="10m-lZ-L87"/>
                 <outlet property="profileImageView" destination="5K3-Ud-0xf" id="fuR-jR-azg"/>
                 <outlet property="shadowView" destination="uNg-u5-Q3f" id="A0A-D5-oOe"/>
-                <outlet property="textContentTextView" destination="jNi-Rr-uXL" id="EuN-IV-kTz"/>
+                <outlet property="textContentTextView" destination="jNi-Rr-uXL" id="9PB-GR-Tqd"/>
                 <outlet property="userSubtitleLabel" destination="yVR-uA-fHm" id="mM1-E3-3Kj"/>
                 <outlet property="usernameLabel" destination="hdr-FN-M2t" id="xUE-gr-UoZ"/>
             </connections>
@@ -1383,9 +1383,6 @@ AGYAAQBrAAEAcwABAHYAAQB7AAEAgwAAAAAAAAQBAAAAAAAAAGcAAAAAAAAAAAAAAAAAAQCGA
         </systemColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

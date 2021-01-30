@@ -143,7 +143,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             if post.preview == nil || post.text == nil {
                 return tableView.frame.height / 2
             }
-            //presenter?.showPostDetail(post)
         }
         return UITableView.automaticDimension
     }

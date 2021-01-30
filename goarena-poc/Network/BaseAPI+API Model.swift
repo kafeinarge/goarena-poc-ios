@@ -110,7 +110,9 @@ class BaseAPI: SessionDelegate {
                                                  headers: headerParams)
                 .validate(contentType: [contentType])
                 .validate(statusCode: 200..<600)
-
+            print(session)
+            print(reqUrl)
+            print(networkRequest)
             handleJsonResponse(dataRequest: networkRequest,
                                hasSession: hasSession,
                                lockScreen: lockScreen,
