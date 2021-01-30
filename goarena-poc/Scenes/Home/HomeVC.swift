@@ -16,11 +16,11 @@ class HomeVC: BaseVC<HomeViewModel> {
     var isDownloadedBefore = false
     var lockScreen = false
     var response: [Content]?
-
+    var userID = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         onSubscribe()
-        
+
         viewModel.getContents()
         wallTableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
         wallTableView.backgroundColor = UIColor.init(hexString: "#F3F6FA")
@@ -44,17 +44,40 @@ class HomeVC: BaseVC<HomeViewModel> {
                 }
             }
         }
+        
+        SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_DELETED.rawValue) { result in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                print("yenileniyor..")
+                self.wallTableView.reloadData()
+            })
+        }
     }
-    
-    
+
+
     @IBAction func openCharts(_ sender: Any) {
         print("charts..")
-        
+
     }
-    
+
     @IBAction func openNewFeed(_ sender: Any) {
+        navFeed()
+    }
+
+    func navFeed(_ image: String? = "", text: String? = "") {
         guard let vc = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "NewFeedVC") as? NewFeedVC else { return }
+        vc.updateText = text
+        vc.updateImage = image
+        guard let nc = self.navigationController else { return }
+        nc.pushViewController(vc, animated: true)
+    }
+
+    func navDetail(_ post: Content?) {
+        guard let post = post else { return }
+        guard let vc = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "HomeDetailVC") as? HomeDetailVC else { return }
+        vc.text = post.text
+        vc.image = post.preview
         guard let nc = self.navigationController else { return }
         nc.pushViewController(vc, animated: true)
     }
@@ -70,7 +93,6 @@ class HomeVC: BaseVC<HomeViewModel> {
 
     func loadPosts(_ page: Int = 0) {
         isNewPageLoading = page > 0
-        //presenter?.load(page: page, needLoading: true)
     }
 
     @objc
@@ -99,13 +121,20 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let post = response?[indexPath.row] {
-            guard let vc = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "HomeDetailVC") as? HomeDetailVC else { return }
-            vc.text = post.text
-            vc.image = post.preview
-            guard let nc = self.navigationController else { return }
-            nc.pushViewController(vc, animated: true)
+        guard let post = response?[indexPath.row] else { return }
+        if post.userId == userID {
+            let alert = UIAlertController(title: "Seçenekler", message: "Düzenlemeler", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Güncelle", style: .default, handler: { (UIAlertAction)in
+                self.navFeed(post.preview, text: post.text)
+            }))
+            alert.addAction(UIAlertAction(title: "Sil", style: .destructive, handler: { (UIAlertAction)in
+                self.viewModel.deletePost(post.id)
+            }))
+            alert.addAction(UIAlertAction(title: "Vazgeç", style: .cancel, handler: { (UIAlertAction)in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            navDetail(post)
         }
     }
 

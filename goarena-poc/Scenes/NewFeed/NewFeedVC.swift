@@ -19,12 +19,24 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
     var textColor: UIColor = .red
     private var pickerController: UIImagePickerController?
 
+    var updateText: String? = ""
+    var updateImage: String? = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         onSubscribe()
         pickerController = UIImagePickerController()
         pickerController?.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(cameraChanged), name: NSNotification.Name(rawValue: "AVCaptureDeviceDidStartRunningNotification"), object: nil)
+        
+        postTextView.text = updateText
+        imageView.image = convertBase64StringToImage(imageBase64String: updateImage ?? "")
+    }
+    
+    func convertBase64StringToImage (imageBase64String: String) -> UIImage {
+        let imageData = Data.init(base64Encoded: imageBase64String, options: .init(rawValue: 0))
+        let image = UIImage(data: imageData!)
+        return image ?? UIImage()
     }
 
     override func showPicker(source: UIImagePickerController.SourceType) {

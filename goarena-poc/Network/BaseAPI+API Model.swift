@@ -22,7 +22,7 @@ public enum URLs: String {
 public enum Endpoint: String {
     case contents = "/wall-service/all"
     case upload = "/wall-service/upload"
-    
+    case delete = "/wall-service/"
     func generateURL(_ baseURL: String) -> String {
         return "\(baseURL)/\(self.rawValue)"
     }
