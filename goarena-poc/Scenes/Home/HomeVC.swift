@@ -17,7 +17,6 @@ class HomeVC: BaseVC<HomeViewModel> {
     var lockScreen = false
     var response = [Content]()
     var topRefresh = false
-    var userID = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +32,7 @@ class HomeVC: BaseVC<HomeViewModel> {
         refresher.tintColor = UIColor.blue
         refresher.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         wallTableView.addSubview(refresher)
+        
     }
 
     private func onSubscribe() {
@@ -146,7 +146,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = response[indexPath.row]
-        if post.user?.id == userID {
+        if post.user?.id == TokenManager.shared.getUser() {
             let alert = UIAlertController(title: "Seçenekler", message: "Düzenlemeler", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Güncelle", style: .default, handler: { (UIAlertAction)in
                 self.navFeed(post.preview, text: post.text)

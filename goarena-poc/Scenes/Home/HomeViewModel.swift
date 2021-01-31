@@ -38,6 +38,8 @@ class HomeViewModel: BaseViewModel {
 
     func handleResponse(response: WallResponse) {
         self.response = response.content
+        let id = self.response?.first?.user?.id
+        TokenManager.shared.saveUser(id)
         SwiftEventBus.post(SubscribeViewState.FEED_STATE.rawValue, sender: response)
     }
 

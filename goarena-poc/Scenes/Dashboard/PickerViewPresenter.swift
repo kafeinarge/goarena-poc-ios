@@ -12,7 +12,7 @@ class PickerViewPresenter:  UITextField, UIPickerViewDataSource, UIPickerViewDel
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
 
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        let doneButton = UIBarButtonItem(title: "Filtrele", style: .done, target: self, action: #selector(doneButtonTapped))
 
         let items = [flexSpace, doneButton]
         toolbar.items = items
