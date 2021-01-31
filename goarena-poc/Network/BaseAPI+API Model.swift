@@ -10,6 +10,23 @@ import Foundation
 import UIKit
 import PKHUD
 
+enum SubscribeViewState: String {
+    case FEED_STATE
+    case NEW_FEED_SUCCESS
+    case NEW_FEED_FILTER_EFFECT
+    case NEW_FEED_FILTER_OK
+    case FEED_DELETED
+    case FEED_UPDATED
+    case FEED_REFRESH
+    
+    case STATISTIC_STATE
+    case DASHBOARD_CHART_REFRESH
+    
+    case LOGIN_SUCCESS
+    case LOGIN_FAILURE
+    case LOGIN_NOTOKEN
+}
+
 class ErrorMessage: Codable {
     var error: String = ""
     var message: String = ""
@@ -17,12 +34,15 @@ class ErrorMessage: Codable {
 
 public enum URLs: String {
     case baseURL = "http://167.172.180.49:8765"
+    case loginURL = "http://167.172.180.49:5000"
 }
 
 public enum Endpoint: String {
     case contents = "/wall-service/all"
     case upload = "/wall-service/upload"
     case delete = "/wall-service/"
+    case dashboard = "/dashboard-service/summaries"
+    case login = "/auth/login"
     
     func generateURL(_ baseURL: String) -> String {
         return "\(baseURL)\(self.rawValue)"
@@ -52,7 +72,7 @@ private let timeoutIntervalForRequest: Double = 300
 class BaseAPI: SessionDelegate {
     static let shared = BaseAPI()
     private var session: Session?
-
+    
     private init() {
         super.init()
         let configuration = URLSessionConfiguration.default
@@ -71,6 +91,7 @@ class BaseAPI: SessionDelegate {
                                         headerParams: HTTPHeaders? = nil,
                                         succeed: @escaping (S) -> Void,
                                         failed: @escaping (F) -> Void) {
+        
         guard let session = session else { return }
         if networkIsReachable() {
             if lockScreen {
@@ -110,9 +131,7 @@ class BaseAPI: SessionDelegate {
                                                  headers: headerParams)
                 .validate(contentType: [contentType])
                 .validate(statusCode: 200..<600)
-            print(session)
-            print(reqUrl)
-            print(networkRequest)
+  
             handleJsonResponse(dataRequest: networkRequest,
                                hasSession: hasSession,
                                lockScreen: lockScreen,
@@ -135,7 +154,7 @@ class BaseAPI: SessionDelegate {
                     HUD.hide()
                 }
             }
-
+                print(dataRequest)
             if (response.response?.statusCode) == 204 {
                 self.handleSuccessfulResponseObject(dataRequest: dataRequest, succeed: succeed)
                 return

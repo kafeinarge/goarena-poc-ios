@@ -21,18 +21,18 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
 
     var updateText: String? = ""
     var updateImage: String? = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         onSubscribe()
         pickerController = UIImagePickerController()
         pickerController?.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(cameraChanged), name: NSNotification.Name(rawValue: "AVCaptureDeviceDidStartRunningNotification"), object: nil)
-        
+
         postTextView.text = updateText
         imageView.image = convertBase64StringToImage(imageBase64String: updateImage ?? "")
     }
-    
+
     func convertBase64StringToImage (imageBase64String: String) -> UIImage {
         let imageData = Data.init(base64Encoded: imageBase64String, options: .init(rawValue: 0))
         let image = UIImage(data: imageData!)
@@ -79,7 +79,7 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
             return
         }
         let image = imageView.image ?? UIImage()
-        let data = image.jpegData(compressionQuality: 0.5) ?? Data()
+        let data = image.jpegData(compressionQuality: 0.3) ?? Data()
         viewModel.postFeed(data, text: postTextView.text)
     }
 
@@ -92,10 +92,26 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
             if let event = result!.object as? Bool {
                 if event == true {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                        self.pop(self)
-                        SwiftEventBus.post(SubscribeViewState.FEED_REFRESH.rawValue)
-                    })
+                            self.pop(self)
+                            SwiftEventBus.post(SubscribeViewState.FEED_REFRESH.rawValue)
+                        })
                 }
+            }
+        }
+
+        SwiftEventBus.onMainThread(self, name: SubscribeViewState.NEW_FEED_FILTER_EFFECT.rawValue) { result in
+            if let event = result!.object as? UIImage {
+                guard let vc = UIStoryboard(name: "Main", bundle: nil)
+                    .instantiateViewController(withIdentifier: "FilterVC") as? FilterVC else { return }
+                vc.image = event
+                guard let nc = self.navigationController else { return }
+                nc.pushViewController(vc, animated: true)
+            }
+        }
+
+        SwiftEventBus.onMainThread(self, name: SubscribeViewState.NEW_FEED_FILTER_OK.rawValue) { result in
+            if let event = result!.object as? UIImage {
+                self.imageView.image = event
             }
         }
     }
@@ -114,7 +130,7 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
 
     func textView(postTextView: UITextView, _ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let allowedLength = postTextMaxLength - textView.text.utf16.count + range.length
-        if (text.utf16.count > allowedLength) || text == "#" {
+        if (text.utf16.count > allowedLength) {
             if (text.utf16.count > 1) {
                 let limitedString = (text as NSString).substring(to: allowedLength)
                 let newText = (textView.text as NSString).replacingCharacters(in: range, with: limitedString)
@@ -127,7 +143,7 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
     }
 
     func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
-        self.imageView.image = cropped
+        SwiftEventBus.post(SubscribeViewState.NEW_FEED_FILTER_EFFECT.rawValue, sender: cropped)
         self.dismiss(animated: true)
     }
 

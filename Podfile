@@ -10,5 +10,7 @@ target 'goarena-poc' do
   pod 'Alamofire'
   pod 'PKHUD'
   pod 'Mantis', '~> 1.4.8'
+  pod 'Charts'
+	
 
 end

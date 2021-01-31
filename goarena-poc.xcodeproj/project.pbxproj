@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		12E0C62AD548F363DFC38BA3 /* Pods_goarena_poc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB238400AA55CB0A638369 /* Pods_goarena_poc.framework */; };
+		E46D0EF525C70AF600B8F93E /* ChartMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D0EF425C70AF600B8F93E /* ChartMarker.swift */; };
+		E46D0EF925C7345300B8F93E /* PickerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D0EF825C7345300B8F93E /* PickerViewPresenter.swift */; };
+		E46D0EFE25C74B4400B8F93E /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D0EFD25C74B4400B8F93E /* ReportCell.swift */; };
+		E46D0F0525C758EC00B8F93E /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D0F0425C758EC00B8F93E /* FilterVC.swift */; };
+		E46D0F0825C7590600B8F93E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D0F0725C7590600B8F93E /* FilterViewModel.swift */; };
 		E48DAE2625C4A70600E1EA51 /* NewFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DAE2525C4A70600E1EA51 /* NewFeedVC.swift */; };
 		E48DAE2C25C4A78F00E1EA51 /* NewFeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DAE2B25C4A78F00E1EA51 /* NewFeedAPI.swift */; };
 		E48DAE2F25C4AD8600E1EA51 /* NewFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DAE2E25C4AD8600E1EA51 /* NewFeedViewModel.swift */; };
@@ -35,6 +40,15 @@
 		E48DAED325C4E11900E1EA51 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DAEBC25C4E11900E1EA51 /* IQUIView+Hierarchy.swift */; };
 		E48DAED425C4E11900E1EA51 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DAEBD25C4E11900E1EA51 /* IQNSArray+Sort.swift */; };
 		E48DAED525C4E11900E1EA51 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DAEBE25C4E11900E1EA51 /* IQKeyboardManager+UITextFieldViewNotification.swift */; };
+		E493EBA225C5CCA60014173F /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EBA125C5CCA60014173F /* Summary.swift */; };
+		E493EBA825C5D19A0014173F /* StaticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EBA725C5D19A0014173F /* StaticsVC.swift */; };
+		E493EBAB25C5D1B70014173F /* StaticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EBAA25C5D1B70014173F /* StaticsViewModel.swift */; };
+		E493EBAE25C5D24A0014173F /* StaticAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EBAD25C5D24A0014173F /* StaticAPI.swift */; };
+		E493EC0625C60FC20014173F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EC0525C60FC20014173F /* LoginVC.swift */; };
+		E493EC0925C60FE00014173F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EC0825C60FE00014173F /* LoginViewModel.swift */; };
+		E493EC0C25C610060014173F /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EC0B25C610060014173F /* LoginAPI.swift */; };
+		E493EC1125C612790014173F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EC1025C612790014173F /* LoginResponse.swift */; };
+		E493EC1425C6173C0014173F /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E493EC1325C6173C0014173F /* TokenManager.swift */; };
 		E4979C3425C35419002B4E9C /* HomeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C3325C35419002B4E9C /* HomeDetailVC.swift */; };
 		E4979C3A25C35532002B4E9C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C3725C35532002B4E9C /* BaseViewController.swift */; };
 		E4979C3B25C35532002B4E9C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4979C3825C35532002B4E9C /* BaseNavigationController.swift */; };
@@ -60,6 +74,11 @@
 		1A9358625A4034997C4C97F0 /* Pods-goarena-poc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goarena-poc.debug.xcconfig"; path = "Target Support Files/Pods-goarena-poc/Pods-goarena-poc.debug.xcconfig"; sourceTree = "<group>"; };
 		498A150049AD19D0014F2552 /* Pods-goarena-poc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goarena-poc.release.xcconfig"; path = "Target Support Files/Pods-goarena-poc/Pods-goarena-poc.release.xcconfig"; sourceTree = "<group>"; };
 		88AB238400AA55CB0A638369 /* Pods_goarena_poc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_goarena_poc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46D0EF425C70AF600B8F93E /* ChartMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMarker.swift; sourceTree = "<group>"; };
+		E46D0EF825C7345300B8F93E /* PickerViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewPresenter.swift; sourceTree = "<group>"; };
+		E46D0EFD25C74B4400B8F93E /* ReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
+		E46D0F0425C758EC00B8F93E /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		E46D0F0725C7590600B8F93E /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		E48DAE2525C4A70600E1EA51 /* NewFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedVC.swift; sourceTree = "<group>"; };
 		E48DAE2B25C4A78F00E1EA51 /* NewFeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedAPI.swift; sourceTree = "<group>"; };
 		E48DAE2E25C4AD8600E1EA51 /* NewFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedViewModel.swift; sourceTree = "<group>"; };
@@ -88,6 +107,15 @@
 		E48DAEBC25C4E11900E1EA51 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		E48DAEBD25C4E11900E1EA51 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		E48DAEBE25C4E11900E1EA51 /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
+		E493EBA125C5CCA60014173F /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		E493EBA725C5D19A0014173F /* StaticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsVC.swift; sourceTree = "<group>"; };
+		E493EBAA25C5D1B70014173F /* StaticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsViewModel.swift; sourceTree = "<group>"; };
+		E493EBAD25C5D24A0014173F /* StaticAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticAPI.swift; sourceTree = "<group>"; };
+		E493EC0525C60FC20014173F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E493EC0825C60FE00014173F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E493EC0B25C610060014173F /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		E493EC1025C612790014173F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		E493EC1325C6173C0014173F /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		E4979C3325C35419002B4E9C /* HomeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailVC.swift; sourceTree = "<group>"; };
 		E4979C3725C35532002B4E9C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E4979C3825C35532002B4E9C /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -140,12 +168,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E46D0F0025C7543000B8F93E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				E46D0EF425C70AF600B8F93E /* ChartMarker.swift */,
+				E46D0EFD25C74B4400B8F93E /* ReportCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		E46D0F0A25C7598200B8F93E /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				E46D0F0425C758EC00B8F93E /* FilterVC.swift */,
+				E46D0F0725C7590600B8F93E /* FilterViewModel.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		E477871025C1F16900800F53 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E4C6273125C1E492007EB745 /* WallResponse.swift */,
+				E493EB9F25C5CC990014173F /* Models */,
 				E4C6274625C1E81D007EB745 /* BaseAPI+API Model.swift */,
-				E48DAE3125C4ADF500E1EA51 /* UploadResponse.swift */,
+				E493EC1325C6173C0014173F /* TokenManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -223,12 +269,48 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		E493EB9F25C5CC990014173F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6273125C1E492007EB745 /* WallResponse.swift */,
+				E48DAE3125C4ADF500E1EA51 /* UploadResponse.swift */,
+				E493EBA125C5CCA60014173F /* Summary.swift */,
+				E493EC1025C612790014173F /* LoginResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E493EBB025C5D6090014173F /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E46D0F0025C7543000B8F93E /* CustomViews */,
+				E493EBA725C5D19A0014173F /* StaticsVC.swift */,
+				E493EBAA25C5D1B70014173F /* StaticsViewModel.swift */,
+				E493EBAD25C5D24A0014173F /* StaticAPI.swift */,
+				E46D0EF825C7345300B8F93E /* PickerViewPresenter.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E493EC0E25C610260014173F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E493EC0525C60FC20014173F /* LoginVC.swift */,
+				E493EC0825C60FE00014173F /* LoginViewModel.swift */,
+				E493EC0B25C610060014173F /* LoginAPI.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		E4979C2B25C34D0E002B4E9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				E4979C3625C35532002B4E9C /* Base */,
 				E4979C2D25C34D1A002B4E9C /* Home */,
 				E48DAE2925C4A77C00E1EA51 /* NewFeed */,
+				E493EBB025C5D6090014173F /* Dashboard */,
+				E493EC0E25C610260014173F /* Login */,
+				E46D0F0A25C7598200B8F93E /* Filter */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -434,28 +516,36 @@
 			files = (
 				E4C6274425C1E7E6007EB745 /* WallAPI.swift in Sources */,
 				E4979C5E25C35F78002B4E9C /* BaseViewModel.swift in Sources */,
+				E493EC0C25C610060014173F /* LoginAPI.swift in Sources */,
 				E48DAE3225C4ADF500E1EA51 /* UploadResponse.swift in Sources */,
 				E4C6274725C1E81D007EB745 /* BaseAPI+API Model.swift in Sources */,
 				E4979C3425C35419002B4E9C /* HomeDetailVC.swift in Sources */,
 				E48DAEBF25C4E11900E1EA51 /* IQTextView.swift in Sources */,
 				E48DAEC625C4E11900E1EA51 /* IQInvocation.swift in Sources */,
+				E46D0EF525C70AF600B8F93E /* ChartMarker.swift in Sources */,
 				E48DAEC825C4E11900E1EA51 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				E48DAED325C4E11900E1EA51 /* IQUIView+Hierarchy.swift in Sources */,
 				E48DAECD25C4E11900E1EA51 /* IQKeyboardManager+Debug.swift in Sources */,
+				E493EBA825C5D19A0014173F /* StaticsVC.swift in Sources */,
 				E48DAEC125C4E11900E1EA51 /* IQPreviousNextView.swift in Sources */,
 				E48DAECF25C4E11900E1EA51 /* IQKeyboardManager+Toolbar.swift in Sources */,
+				E493EC1125C612790014173F /* LoginResponse.swift in Sources */,
 				E4F8F88525C2E5B80062D14C /* FeedCell.swift in Sources */,
+				E46D0EFE25C74B4400B8F93E /* ReportCell.swift in Sources */,
 				E48DAED425C4E11900E1EA51 /* IQNSArray+Sort.swift in Sources */,
 				E48DAED125C4E11900E1EA51 /* IQUIViewController+Additions.swift in Sources */,
+				E46D0F0525C758EC00B8F93E /* FilterVC.swift in Sources */,
 				E4979C4525C35854002B4E9C /* SwiftEventBus.swift in Sources */,
 				E48DAE2625C4A70600E1EA51 /* NewFeedVC.swift in Sources */,
 				E48DAEC225C4E11900E1EA51 /* IQTitleBarButtonItem.swift in Sources */,
 				E4C6273225C1E492007EB745 /* WallResponse.swift in Sources */,
+				E493EC0925C60FE00014173F /* LoginViewModel.swift in Sources */,
 				E4979C3C25C35532002B4E9C /* BaseBuilder.swift in Sources */,
 				E48DAEC425C4E11900E1EA51 /* IQToolbar.swift in Sources */,
 				E4979C3A25C35532002B4E9C /* BaseViewController.swift in Sources */,
 				E4F8F88925C2F85A0062D14C /* Extensions.swift in Sources */,
 				E48DAECC25C4E11900E1EA51 /* IQKeyboardManager.swift in Sources */,
+				E493EC1425C6173C0014173F /* TokenManager.swift in Sources */,
 				E4C6273D25C1E6D6007EB745 /* HomeVC.swift in Sources */,
 				E4979C5D25C35F78002B4E9C /* BaseVC.swift in Sources */,
 				E48DAECA25C4E11900E1EA51 /* IQKeyboardManager+Position.swift in Sources */,
@@ -464,13 +554,19 @@
 				E48DAECE25C4E11900E1EA51 /* IQKeyboardManager+OrientationNotification.swift in Sources */,
 				E48DAEC325C4E11900E1EA51 /* IQBarButtonItem.swift in Sources */,
 				E48DAE2C25C4A78F00E1EA51 /* NewFeedAPI.swift in Sources */,
+				E493EBAB25C5D1B70014173F /* StaticsViewModel.swift in Sources */,
+				E46D0EF925C7345300B8F93E /* PickerViewPresenter.swift in Sources */,
+				E46D0F0825C7590600B8F93E /* FilterViewModel.swift in Sources */,
 				E4979C5125C35F4C002B4E9C /* HomeViewModel.swift in Sources */,
+				E493EC0625C60FC20014173F /* LoginVC.swift in Sources */,
 				E48DAECB25C4E11900E1EA51 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				E48DAEC725C4E11900E1EA51 /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */,
 				E4C6271625C1E0D0007EB745 /* AppDelegate.swift in Sources */,
 				E48DAED525C4E11900E1EA51 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */,
 				E48DAEC025C4E11900E1EA51 /* IQKeyboardManager+Internal.swift in Sources */,
 				E48DAEC925C4E11900E1EA51 /* IQKeyboardManagerConstants.swift in Sources */,
+				E493EBA225C5CCA60014173F /* Summary.swift in Sources */,
+				E493EBAE25C5D24A0014173F /* StaticAPI.swift in Sources */,
 				E48DAE2F25C4AD8600E1EA51 /* NewFeedViewModel.swift in Sources */,
 				E48DAED025C4E11900E1EA51 /* IQUIScrollView+Additions.swift in Sources */,
 				E48DAED225C4E11900E1EA51 /* IQUITextFieldView+Additions.swift in Sources */,

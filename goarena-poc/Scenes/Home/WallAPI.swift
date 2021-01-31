@@ -10,17 +10,17 @@ import Alamofire
 import PKHUD
 
 class WallAPI {
-    private var uploadRequest: UploadRequest?
     func getWallService(lockScreen: Bool,
                         pageNumber: Int,
                         succeed: @escaping (WallResponse) -> Void,
                          failed: @escaping (ErrorMessage) -> Void) {
         var headerParams = HTTPHeaders()
-        headerParams.add(name: "Authorization", value: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjEyNzExNjk1fQ.lWxP3tRGMEgHh74aWRv6dQW_3HjnoiO4BcMavJuUFG4iFQZIzoxJKEkE7i8lJdXb_gyLOrr8LwTH9JHmG6je1w")
+        guard let token = TokenManager.shared.token else { return }
+        headerParams.add(name: "Authorization", value: "Bearer \(token)")
         
         let parameters: Parameters = [
             "pageNo": pageNumber,
-            "pageSize": 10,
+            "pageSize": 20,
             "sortBy": "id",
             "direction": "DESC"
         ]
@@ -63,11 +63,5 @@ class WallAPI {
             }
         })
 
-    }
-    
-    func cancelRequest() {
-        if !(uploadRequest?.isCancelled ?? true) {
-            uploadRequest?.cancel()
-        }
     }
 }

@@ -17,7 +17,8 @@ class NewFeedAPI {
                         succeed: @escaping (UploadResponse) -> Void,
                          failed: @escaping (ErrorMessage) -> Void) {
         var headerParams = HTTPHeaders()
-        headerParams.add(name: "Authorization", value: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjEyNzExNjk1fQ.lWxP3tRGMEgHh74aWRv6dQW_3HjnoiO4BcMavJuUFG4iFQZIzoxJKEkE7i8lJdXb_gyLOrr8LwTH9JHmG6je1w")
+        guard let token = TokenManager.shared.token else { return }
+        headerParams.add(name: "Authorization", value: "Bearer \(token)")
         headerParams.add(name: "Accept", value: "*/*")
         
         let urlStr = Endpoint.upload.generateURL(URLs.baseURL.rawValue)

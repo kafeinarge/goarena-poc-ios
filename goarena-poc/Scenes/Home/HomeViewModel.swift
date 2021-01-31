@@ -7,15 +7,6 @@
 
 import UIKit
 
-enum SubscribeViewState: String {
-    case FEED_STATE
-    case NEW_FEED_SUCCESS
-    case NEW_FEED_FAILURE
-    case FEED_DELETED
-    case FEED_UPDATED
-    case FEED_REFRESH
-}
-
 class HomeViewModel: BaseViewModel {
     var isDownloadedBefore = false
     var lockScreen = false

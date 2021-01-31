@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.4.1)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - Kingfisher (5.15.8):
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
@@ -20,6 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Charts
   - KingfisherWebP
   - Mantis (~> 1.4.8)
   - PKHUD
@@ -27,6 +31,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Charts
     - Kingfisher
     - KingfisherWebP
     - libwebp
@@ -35,12 +40,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   KingfisherWebP: 0768e0c00bf9746de9ee5b22a795e9504345f258
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   Mantis: 847f5018fc20af704cc9ae23880b9b96b4844ab8
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
 
-PODFILE CHECKSUM: 0f987a54e88d6d95ed1996342012b4998f20d551
+PODFILE CHECKSUM: a24486a032849209753b849a9649e0506f2a515e
 
 COCOAPODS: 1.9.3

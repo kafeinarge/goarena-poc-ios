@@ -155,45 +155,8 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olr-Im-qim" userLabel="FooterFrame">
                                                 <rect key="frame" x="0.0" y="664" width="641" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-er-ddZ">
-                                                        <rect key="frame" x="10" y="0.0" width="40" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="DqH-Pw-9uF"/>
-                                                        </constraints>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="cw-like"/>
-                                                        <state key="selected" image="cw-like-selected"/>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 beğeni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-lY-7Y3">
-                                                        <rect key="frame" x="58" y="14.666666666666629" width="485" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-lq-29n">
-                                                        <rect key="frame" x="591" y="0.0" width="40" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="x8V-gq-pzr"/>
-                                                        </constraints>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="cw-bookmark-flag"/>
-                                                        <state key="selected" image="cw-bookmark-flag-selected"/>
-                                                    </button>
-                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="0eU-lq-29n" firstAttribute="leading" secondItem="RcN-lY-7Y3" secondAttribute="trailing" constant="48" id="66Z-BD-Zr9"/>
-                                                    <constraint firstItem="YB5-er-ddZ" firstAttribute="top" secondItem="olr-Im-qim" secondAttribute="top" id="ET3-zS-lQk"/>
-                                                    <constraint firstAttribute="trailing" secondItem="0eU-lq-29n" secondAttribute="trailing" constant="10" id="GHr-uG-M5o"/>
-                                                    <constraint firstItem="YB5-er-ddZ" firstAttribute="centerY" secondItem="RcN-lY-7Y3" secondAttribute="centerY" id="HAe-jN-UpW"/>
                                                     <constraint firstAttribute="height" constant="50" id="O0S-pf-AIg"/>
-                                                    <constraint firstItem="YB5-er-ddZ" firstAttribute="baseline" secondItem="0eU-lq-29n" secondAttribute="baseline" constant="1" id="Se0-6K-6FR"/>
-                                                    <constraint firstItem="RcN-lY-7Y3" firstAttribute="leading" secondItem="YB5-er-ddZ" secondAttribute="trailing" constant="8" id="hsl-9a-0Gr"/>
-                                                    <constraint firstItem="0eU-lq-29n" firstAttribute="top" secondItem="olr-Im-qim" secondAttribute="top" id="iO8-cd-zIm"/>
-                                                    <constraint firstItem="RcN-lY-7Y3" firstAttribute="centerY" secondItem="0eU-lq-29n" secondAttribute="centerY" id="lcI-YV-PXS"/>
-                                                    <constraint firstItem="YB5-er-ddZ" firstAttribute="centerY" secondItem="olr-Im-qim" secondAttribute="centerY" id="nvx-EQ-Y5O"/>
-                                                    <constraint firstItem="YB5-er-ddZ" firstAttribute="leading" secondItem="olr-Im-qim" secondAttribute="leading" constant="10" id="sal-pT-bem"/>
-                                                    <constraint firstItem="0eU-lq-29n" firstAttribute="centerY" secondItem="olr-Im-qim" secondAttribute="centerY" id="y6j-fO-Kbh"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -266,10 +229,6 @@
     </objects>
     <resources>
         <image name="avatar" width="42" height="42"/>
-        <image name="cw-bookmark-flag" width="16" height="20"/>
-        <image name="cw-bookmark-flag-selected" width="16" height="20"/>
-        <image name="cw-like" width="22" height="22"/>
-        <image name="cw-like-selected" width="19" height="19"/>
         <image name="cw-more" width="18" height="4"/>
         <image name="imageView:rz9-we-4Bo:image" width="30" height="30">
             <mutableData key="keyedArchiveRepresentation">

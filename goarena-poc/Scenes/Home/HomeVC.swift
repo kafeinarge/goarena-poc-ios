@@ -63,8 +63,10 @@ class HomeVC: BaseVC<HomeViewModel> {
 
 
     @IBAction func openCharts(_ sender: Any) {
-        print("charts..")
-
+        guard let vc = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "StaticsVC") as? StaticsVC else { return }
+        guard let nc = self.navigationController else { return }
+        nc.pushViewController(vc, animated: true)
     }
 
     @IBAction func openNewFeed(_ sender: Any) {
@@ -137,14 +139,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         if post.text != nil && post.preview != nil {
             return UITableViewCell()
         }
-        print("POST _>", post.text, post.preview)
+
         cell.setup(post, tableWidth: wallTableView.frame.width)
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = response[indexPath.row]
-        if post.userId == userID {
+        if post.user?.id == userID {
             let alert = UIAlertController(title: "Seçenekler", message: "Düzenlemeler", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Güncelle", style: .default, handler: { (UIAlertAction)in
                 self.navFeed(post.preview, text: post.text)
