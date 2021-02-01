@@ -56,9 +56,9 @@ class HomeVC: BaseVC<HomeViewModel> {
         SwiftEventBus.onMainThread(self, name: SubscribeViewState.FEED_REFRESH.rawValue) { result in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                     self.viewModel.getContents()
+                    self.wallTableView.reloadData()
                 })
         }
-
     }
 
 
@@ -73,11 +73,16 @@ class HomeVC: BaseVC<HomeViewModel> {
         navFeed()
     }
 
-    func navFeed(_ image: String? = "", text: String? = "") {
+    func navFeed(_ image: String? = "",
+                 text: String? = "",
+                 postId: Int? = -1,
+                 update: Bool? = false) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "NewFeedVC") as? NewFeedVC else { return }
         vc.updateText = text
         vc.updateImage = image
+        vc.postId = postId
+        vc.update = update
         guard let nc = self.navigationController else { return }
         nc.pushViewController(vc, animated: true)
     }
@@ -148,7 +153,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 self.navDetail(post)
             }))
             alert.addAction(UIAlertAction(title: "Güncelle", style: .default, handler: { (UIAlertAction)in
-                self.navFeed(post.preview, text: post.text)
+                self.navFeed(post.preview, text: post.text, postId: post.id, update: true)
             }))
             alert.addAction(UIAlertAction(title: "Sil", style: .destructive, handler: { (UIAlertAction)in
                 self.viewModel.deletePost(post.id)

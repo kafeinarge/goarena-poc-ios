@@ -41,11 +41,11 @@ class WallAPI {
                         succeed: @escaping () -> Void,
                          failed: @escaping (ErrorMessage) -> Void) {
         var headerParams = HTTPHeaders()
-        headerParams.add(name: "Authorization", value: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjEyNzExNjk1fQ.lWxP3tRGMEgHh74aWRv6dQW_3HjnoiO4BcMavJuUFG4iFQZIzoxJKEkE7i8lJdXb_gyLOrr8LwTH9JHmG6je1w")
-        headerParams.add(name: "Accept", value: "*/*")
+        guard let token = TokenManager.shared.token else { return }
+        headerParams.add(name: "Authorization", value: "Bearer \(token)")
         
         guard let id = postId else { return }
-        let urlStr = Endpoint.delete.generateURL(URLs.baseURL.rawValue) + "\(id)"
+        let urlStr = Endpoint.deleteOrUpdate.generateURL(URLs.baseURL.rawValue) + "\(id)"
         guard let url = URL(string: urlStr) else { return }
         AF.sessionConfiguration.timeoutIntervalForRequest = 60
         let request =  AF.request(url, method: .delete, headers: headerParams)

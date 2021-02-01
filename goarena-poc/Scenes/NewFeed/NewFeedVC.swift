@@ -7,6 +7,7 @@
 
 import UIKit
 import Mantis
+import PKHUD
 
 class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CropViewControllerDelegate {
 
@@ -21,7 +22,9 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
 
     var updateText: String? = ""
     var updateImage: String? = ""
-
+    var postId: Int? = -1
+    var update: Bool? = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         onSubscribe()
@@ -80,7 +83,7 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
         }
         let image = imageView.image ?? UIImage()
         let data = image.jpegData(compressionQuality: 0.3) ?? Data()
-        viewModel.postFeed(data, text: postTextView.text)
+        viewModel.postFeed(data, text: postTextView.text, self.postId, self.update)
     }
 
     @IBAction func pop(_ sender: Any) {
@@ -91,6 +94,9 @@ class NewFeedVC: BaseVC<NewFeedViewModel>, UIImagePickerControllerDelegate, UINa
         SwiftEventBus.onMainThread(self, name: SubscribeViewState.NEW_FEED_SUCCESS.rawValue) { result in
             if let event = result!.object as? Bool {
                 if event == true {
+                    HUD.show(.label("Başarıyla gönderildi!"))
+                    HUD.hide(afterDelay: 1)
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                             self.pop(self)
                             SwiftEventBus.post(SubscribeViewState.FEED_REFRESH.rawValue)

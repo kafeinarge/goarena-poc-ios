@@ -40,7 +40,7 @@ public enum URLs: String {
 public enum Endpoint: String {
     case contents = "/wall-service/all"
     case upload = "/wall-service/upload"
-    case delete = "/wall-service/"
+    case deleteOrUpdate = "/wall-service/"
     case dashboard = "/dashboard-service/summaries"
     case login = "/auth/login"
     

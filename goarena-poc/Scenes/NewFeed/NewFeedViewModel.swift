@@ -13,24 +13,39 @@ class NewFeedViewModel: BaseViewModel {
     var response: UploadResponse?
     var postFeedApi = NewFeedAPI()
 
-    func postFeed(_ data: Data?, text: String?) {
-        guard let data = data, let text = text else { return }
+    func postFeed(_ data: Data?, text: String?, _ postId: Int?, _ update: Bool?) {
+        guard let data = data, let text = text,
+              let postId = postId, let update = update
+              else { return }
         if response != nil {
             isDownloadedBefore = true
         } else {
             lockScreen = true
         }
 
-        postFeedApi.postFeed(lockScreen: lockScreen,
-                             data: data,
-                             text: text,
-                             succeed: handleResponse,
-                             failed: handleErrorResponse)
+        if update != true {
+            postFeedApi.postFeed(lockScreen: lockScreen,
+                                 data: data,
+                                 text: text,
+                                 succeed: handleResponse,
+                                 failed: handleErrorResponse)
 
+        } else {
+            postFeedApi.updateFeed(lockScreen: lockScreen,
+                                 postId: postId,
+                                 text: text,
+                                 succeed: handleUpdateResponse,
+                                 failed: handleErrorResponse)
+        }
     }
 
     func handleResponse(response: UploadResponse) {
         self.response = response
+    }
+    
+    func handleUpdateResponse(response: UploadResponse) {
+        self.response = response
+        SwiftEventBus.post(SubscribeViewState.NEW_FEED_SUCCESS.rawValue, sender: true)
     }
 
     func handleErrorResponse(response: ErrorMessage) {
