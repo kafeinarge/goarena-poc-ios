@@ -48,11 +48,10 @@ class FeedCell: UITableViewCell {
         profileImageView.layer.masksToBounds = true
     }
 
-    func setup(_ post: Content, tableWidth: CGFloat) {
+    func setup(_ post: Content) {
         self.post = post
-        let cardWidth =  post.preview != nil ? tableWidth - 40 : tableWidth
         cardBackgroundView.backgroundColor = UIColor.init(hexString: "#FECB00")
-        
+
         self.usernameLabel.text = (post.user?.name)! + " " + (post.user?.surname)!
         self.userSubtitleLabel.text = post.user?.title
        
@@ -66,26 +65,13 @@ class FeedCell: UITableViewCell {
             }
         }
         
-        guard let image = post.preview else { return }
-        
-        DispatchQueue.main.async { [self] in
-            feedImageView.image = convertBase64StringToImage(imageBase64String: image)
-        }
-        
-        if feedImageView == nil {
-            mediaFrameViewHeightConstraint.constant = 0
-            mediaFrameView.layoutIfNeeded()
-        } else {
-            mediaFrameViewHeightConstraint.constant = cardWidth * 3 / 4
-            mediaFrameView.layoutIfNeeded()
-        }
-
+        feedImageView.image = convertBase64StringToImage(imageBase64String: post.preview ?? "")
     }
     
     func convertBase64StringToImage (imageBase64String:String) -> UIImage {
         let imageData = Data.init(base64Encoded: imageBase64String, options: .init(rawValue: 0))
         let image = UIImage(data: imageData!)
-        return image!
+        return image ?? UIImage()
     }
 
 

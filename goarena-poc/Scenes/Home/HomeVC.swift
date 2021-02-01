@@ -136,11 +136,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
         let post = response[indexPath.row]
-        if post.text != nil && post.preview != nil {
-            return UITableViewCell()
-        }
-
-        cell.setup(post, tableWidth: wallTableView.frame.width)
+        cell.setup(post)
         return cell
     }
 
@@ -148,6 +144,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let post = response[indexPath.row]
         if post.user?.id == TokenManager.shared.getUser() {
             let alert = UIAlertController(title: "Seçenekler", message: "Düzenlemeler", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Detay", style: .default, handler: { (UIAlertAction)in
+                self.navDetail(post)
+            }))
             alert.addAction(UIAlertAction(title: "Güncelle", style: .default, handler: { (UIAlertAction)in
                 self.navFeed(post.preview, text: post.text)
             }))
