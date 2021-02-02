@@ -55,14 +55,8 @@ class FeedCell: UITableViewCell {
         self.usernameLabel.text = (post.user?.name)! + " " + (post.user?.surname)!
         self.userSubtitleLabel.text = post.user?.title
        
-        if var content = post.text {
-            if content.count > 255 {
-                content = "\(String(content.prefix(255)))... devamı"
-                self.textContentTextView.attributedText = NSAttributedString.linkAttributedText(withString: content, linkString: "devamı")
-            } else {
-                self.textContentTextView.attributedText = nil
-                self.textContentTextView.text = "\(content)"
-            }
+        if let content = post.text {
+            self.textContentTextView.text = "\(content)"
         }
         
         feedImageView.image = convertBase64StringToImage(imageBase64String: post.preview ?? "")

@@ -28,6 +28,7 @@ class LoginVC: BaseVC<LoginViewModel> {
     }
 
     private func navHome() {
+        HUD.hide()
         guard let vc = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else { return }
         guard let nc = self.navigationController else { return }
@@ -38,7 +39,6 @@ class LoginVC: BaseVC<LoginViewModel> {
         SwiftEventBus.onMainThread(self, name: SubscribeViewState.LOGIN_SUCCESS.rawValue) { result in
             if let event = result!.object as? LoginResponse {
                 if event.token != nil {
-                    HUD.hide()
                     TokenManager.shared.save(event.token)
                     self.navHome()
                 }
