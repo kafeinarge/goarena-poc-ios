@@ -494,7 +494,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSY-Pq-Lhe" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="102" width="390" height="250"/>
+                                <rect key="frame" x="10" y="102" width="370" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="LdV-Yd-DOb"/>
@@ -651,14 +651,14 @@
                         <viewLayoutGuide key="safeArea" id="XaE-MH-pAc"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FSY-Pq-Lhe" firstAttribute="trailing" secondItem="XaE-MH-pAc" secondAttribute="trailing" id="0Aa-pr-fuJ"/>
                             <constraint firstItem="XaE-MH-pAc" firstAttribute="trailing" secondItem="o6h-Er-Ymz" secondAttribute="trailing" id="345-rI-M2P"/>
-                            <constraint firstItem="FSY-Pq-Lhe" firstAttribute="leading" secondItem="XaE-MH-pAc" secondAttribute="leading" id="COi-Ov-kh0"/>
                             <constraint firstItem="eYj-vE-Lbe" firstAttribute="top" secondItem="XaE-MH-pAc" secondAttribute="top" id="DFN-mZ-3ep"/>
                             <constraint firstItem="FSY-Pq-Lhe" firstAttribute="top" secondItem="eYj-vE-Lbe" secondAttribute="bottom" constant="8" symbolic="YES" id="Jpy-wd-Tdb"/>
                             <constraint firstItem="XaE-MH-pAc" firstAttribute="bottom" secondItem="o6h-Er-Ymz" secondAttribute="bottom" id="PF0-oV-O6m"/>
                             <constraint firstItem="eYj-vE-Lbe" firstAttribute="leading" secondItem="XaE-MH-pAc" secondAttribute="leading" id="TC0-1A-7Rz"/>
                             <constraint firstItem="o6h-Er-Ymz" firstAttribute="leading" secondItem="XaE-MH-pAc" secondAttribute="leading" id="YPo-WH-4Ba"/>
+                            <constraint firstItem="FSY-Pq-Lhe" firstAttribute="leading" secondItem="XaE-MH-pAc" secondAttribute="leading" constant="10" id="jhs-AD-BQV"/>
+                            <constraint firstItem="XaE-MH-pAc" firstAttribute="trailing" secondItem="FSY-Pq-Lhe" secondAttribute="trailing" constant="10" id="lqZ-1d-O1L"/>
                             <constraint firstItem="vok-1h-Alf" firstAttribute="leading" secondItem="XaE-MH-pAc" secondAttribute="leading" constant="10" id="meN-xQ-A4o"/>
                             <constraint firstAttribute="trailing" secondItem="eYj-vE-Lbe" secondAttribute="trailing" id="t6z-IX-Hyq"/>
                             <constraint firstItem="o6h-Er-Ymz" firstAttribute="top" secondItem="vok-1h-Alf" secondAttribute="bottom" constant="10" id="thr-Ba-ynR"/>
@@ -673,7 +673,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Stx-QC-IHr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1043" y="857"/>
+            <point key="canvasLocation" x="-1043.0769230769231" y="856.6350710900474"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="o6d-AC-ASa">
@@ -857,10 +857,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vNT-Xk-A53">
-                                <rect key="frame" x="0.0" y="692" width="390" height="118"/>
+                                <rect key="frame" x="0.0" y="710" width="390" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbp-pF-dlc">
-                                        <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="118"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="100"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Sepia">
@@ -871,7 +871,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViR-CL-tEe">
-                                        <rect key="frame" x="197.66666666666663" y="0.0" width="192.33333333333337" height="118"/>
+                                        <rect key="frame" x="197.66666666666663" y="0.0" width="192.33333333333337" height="100"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Bloom">
@@ -882,6 +882,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="lAE-PA-HfY"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pkg-U1-Qtu"/>
@@ -893,7 +896,6 @@
                             <constraint firstItem="mCc-gx-oEQ" firstAttribute="leading" secondItem="pkg-U1-Qtu" secondAttribute="leading" id="TIk-3b-cNu"/>
                             <constraint firstItem="pkg-U1-Qtu" firstAttribute="bottom" secondItem="vNT-Xk-A53" secondAttribute="bottom" id="YEn-Vc-Z2D"/>
                             <constraint firstItem="edw-g9-4Qi" firstAttribute="leading" secondItem="pkg-U1-Qtu" secondAttribute="leading" id="eHN-M0-DUg"/>
-                            <constraint firstItem="vNT-Xk-A53" firstAttribute="top" secondItem="mCc-gx-oEQ" secondAttribute="bottom" constant="248" id="uDo-84-AT5"/>
                             <constraint firstItem="mCc-gx-oEQ" firstAttribute="top" secondItem="edw-g9-4Qi" secondAttribute="bottom" id="upH-in-QeY"/>
                             <constraint firstItem="pkg-U1-Qtu" firstAttribute="trailing" secondItem="vNT-Xk-A53" secondAttribute="trailing" id="xY4-kf-yUi"/>
                             <constraint firstItem="edw-g9-4Qi" firstAttribute="trailing" secondItem="pkg-U1-Qtu" secondAttribute="trailing" id="zcN-8b-sda"/>
